@@ -12,15 +12,15 @@ if ($entorno == 'local') {
     $db_password = '';
     $db_name = 'naxsan';
 } else {
-    $db_host = 'localhost';
+    $db_host = 'sdb-64.hosting.stackcp.net';
     $db_user = 'admin-81de';
     $db_password = 'naxsan2023abc*';
     $db_name = 'naxsan-35303337ab1d';
 }
 
-$conexion = new mysqli($db_host, $db_user, $db_password, $db_name);
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+$conexion = @mysqli_connect($db_host,$db_user,$db_password,$db_name);
+if (!$conexion) {
+    echo "Error en la conexion";
 }
 
 
