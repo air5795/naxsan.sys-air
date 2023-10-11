@@ -68,7 +68,7 @@ if (!empty($_SESSION['active'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
-<body class="" style="background-color: black ;color: white;">
+<body class="" style="background-color: #2e2e2e ;color: white;">
 
   <section class="container-fluid">
     <div class="row g-0">
@@ -121,8 +121,8 @@ if (!empty($_SESSION['active'])) {
 
           <form action="" method="post">
 
-          <h2 style="font-size:18px;text-align: center;">SISTEMA DE GESTION, CONTROL E INFORMACION </h2> 
-          <h2 style="font-size:15px;text-align: center;">CONSTRUCTORA COMERCIALIZADORA NAXSAN </h2>
+          <h2 style="font-size:18px;text-align: center;">SISTEMA WEB DE GESTIÓN, CONTROL E INFORMACIÓN </h2> 
+          <h2 style="font-size:15px;text-align: center; color:#ff7f7f">CONSTRUCTORA COMERCIALIZADORA NAXSAN </h2>
 
           <hr>
 
@@ -147,9 +147,10 @@ if (!empty($_SESSION['active'])) {
         </div>
 
         <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
-          <p class="d-inline-block mb-0 ">@irsoft-  </p> <a href="#" class=" text-decoration-none"> SYSTEMS </a> <BR>
+        <p class="d-inline-block mb-0 ">Licencia :  </p> <a style="color: greenyellow !IMPORTANT;background-color: green;padding: 10px;border-radius: 30px;" href="#" class=" text-decoration-none"> ACTIVADO <i class="bi bi-check2-circle"></i> </a>
+          
           <HR></HR>
-          <p class="d-inline-block mb-0 ">LICENCIA :  </p> <a style="color: greenyellow !IMPORTANT;" href="#" class=" text-decoration-none"> ACTIVA </a>
+          <p class="d-inline-block mb-0 ">@irsoft-  </p> <a href="#" class=" text-decoration-none"> SYSTEMS </a> <BR>
         </div>
       </div>
 
