@@ -12,7 +12,7 @@ if ($entorno == 'local') {
     $db_password = '';
     $db_name = 'naxsan';
 } else {
-    $db_host = '';
+    $db_host = 'sdb-64.hosting.stackcp.net';
     $db_user = 'admin-81de';
     $db_password = '71811452Ale*';
     $db_name = 'naxsan-35303337ab1d';
