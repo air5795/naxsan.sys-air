@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1') {
+if ($_SERVER['SERVER_NAME'] == 'localhost:3316' || $_SERVER['SERVER_NAME'] == '127.0.0.1') {
     $entorno = 'local';
 } else {
     $entorno = 'produccion';
