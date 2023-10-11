@@ -111,7 +111,7 @@ if (!empty($_SESSION['active'])) {
       <div class="col-lg-4  ">
         <div class="px-lg-6 pt-lg-4 pb-lg-3 p-4 w-100 mb-auto">
 
-          <center><img src="img/ICON.PNG" width="80%" class="" ></center>
+          <center><img src="img/ICON.png" width="80%" class="" ></center>
         </div>
         <div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center">
 
