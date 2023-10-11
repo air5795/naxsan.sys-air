@@ -14,7 +14,7 @@ if ($entorno == 'local') {
 } else {
     $db_host = 'localhost';
     $db_user = 'admin-81de';
-    $db_password = 'naxsan2023abc*';
+    $db_password = '71811452Ale*';
     $db_name = 'naxsan-35303337ab1d';
 }
 
