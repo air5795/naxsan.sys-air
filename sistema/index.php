@@ -1,4 +1,3 @@
-
 <?php
     session_start();
     include "includes/scripts.php";
@@ -25,7 +24,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
