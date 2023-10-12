@@ -58,18 +58,17 @@ if (!empty($_SESSION['active'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LOGIN SIS-NAXSAN</title>
+  <title>NAXSAN</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="shortcut icon" href="img/ICON.png">
+  <link rel="shortcut icon" href="img/icono.png">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body class="" style="background-color: #2e2e2e ;color: white;">
-
   <section class="container-fluid">
     <div class="row g-0">
       <div class="col-lg-8 d-none d-lg-block">
@@ -81,19 +80,19 @@ if (!empty($_SESSION['active'])) {
           </div>
           <div class="carousel-inner">
 
-            <div class="carousel-item img-1 min-vh-100 active ">
+            <div  class="carousel-item img-1 min-vh-100 active ">
 
               <div class="carousel-caption d-none d-md-block">
-                <h5>PONCELET</h5>
-                <p>airsoft</p>
+                <h5>NAXSAN</h5>
+                <p>@irsoft</p>
               </div>
             </div>
 
             <div class="carousel-item img-2 min-vh-100">
 
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Poncelet</h5>
-                <p>Airsoft</p>
+              <div  class="carousel-caption d-none d-md-block">
+              <h5>NAXSAN</h5>
+                <p>@irsoft</p>
               </div>
             </div>
 
@@ -147,10 +146,10 @@ if (!empty($_SESSION['active'])) {
         </div>
 
         <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
-        <p class="d-inline-block mb-0 ">Licencia :  </p> <a style="color: greenyellow !IMPORTANT;background-color: green;padding: 10px;border-radius: 30px;" href="#" class=" text-decoration-none"> ACTIVADO <i class="bi bi-check2-circle"></i> </a>
+        <p class="d-inline-block mb-0 ">Licencia :  </p> <a style="color: greenyellow !IMPORTANT;" href="#" class=" text-decoration-none"> ACTIVADO <i class="bi bi-check2-circle"></i> </a>
           
           <HR></HR>
-          <p class="d-inline-block mb-0 ">@irsoft-  </p> <a href="#" class=" text-decoration-none"> SYSTEMS </a> <BR>
+          <p class="d-inline-block mb-0 ">@irsoft-  </p> <a href="#" class=" text-decoration-none"> SYSTEMS </a> -  Derechos Reservados © 2023 <BR>
         </div>
       </div>
 

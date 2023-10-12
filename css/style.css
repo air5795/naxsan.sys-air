@@ -38,14 +38,14 @@ a{
 }
 
 .img-1{
-    background-image: url('../img/1.jpg');
+    background-image: url('../img/ban1.png');
     background-size:cover;
     background-position: center;
 
 }
 
 .img-2{
-    background-image: url('../img/2.jpg');
+    background-image: url('../img/ban2.png');
     background-size: cover;
     background-position: center;
 }
