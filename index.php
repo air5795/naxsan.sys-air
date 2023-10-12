@@ -84,7 +84,7 @@ if (!empty($_SESSION['active'])) {
 
               <div class="carousel-caption d-none d-md-block">
                 <h5>NAXSAN</h5>
-                <p>@irsoft</p>
+                <p>@irsoft 2023</p>
               </div>
             </div>
 
@@ -92,7 +92,7 @@ if (!empty($_SESSION['active'])) {
 
               <div  class="carousel-caption d-none d-md-block">
               <h5>NAXSAN</h5>
-                <p>@irsoft</p>
+                <p>@irsoft 2023</p>
               </div>
             </div>
 
