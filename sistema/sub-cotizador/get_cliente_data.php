@@ -1,14 +1,27 @@
 <?php
 // Establecer la conexión a la base de datos
 
+if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1') {
+    $entorno = 'local';
+} else {
+    $entorno = 'produccion';
+}
 
-$servername = "localhost:3316";
-$username = "root";
-$password = "";
-$dbname = "naxsan";
+if ($entorno == 'local') {
+    $db_host = 'localhost:3316';
+    $db_user = 'root';
+    $db_password = '';
+    $db_name = 'naxsan';
+} else {
+    $db_host = 'sdb-64.hosting.stackcp.net';
+    $db_user = 'admin-81de';
+    $db_password = '71811452Ale*';
+    $db_name = 'naxsan-35303337ab1d';
+}
+
 
 // Crear la conexión
-$conexion = new mysqli($servername, $username, $password, $dbname);
+$conexion = new mysqli($db_host, $db_user, $db_password, $db_name);
 
 // Verificar la conexión
 if ($conexion->connect_error) {
