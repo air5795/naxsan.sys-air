@@ -2,10 +2,10 @@
 
 class Invoice
 {
-    private $host = 'sdb-64.hosting.stackcp.net';
-    private $user = 'admin-81de';
-    private $password = '71811452Ale*';
-    private $database = 'naxsan-35303337ab1d';
+    private $host = 'localhost:3316';
+    private $user = 'root';
+    private $password = '';
+    private $database = 'naxsan';
     private $invoiceOrderTable = 'cotizacion';
     private $invoiceOrderItemTable = 'items_cotizacion';
     private $dbConnect = false;
