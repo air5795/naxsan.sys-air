@@ -31,7 +31,7 @@ if (!empty($_SESSION['active'])) {
         $_SESSION['active'] = true;
         $_SESSION['iduser'] = $data['idusuario'];
         $_SESSION['nombre'] = $data['nombre'];
-        $_SESSION['email'] = $data['email'];
+        //$_SESSION['email'] = $data['email'];
         $_SESSION['user'] = $data['usuario'];
         $_SESSION['rol'] = $data['rol'];
 
@@ -63,7 +63,7 @@ if (!empty($_SESSION['active'])) {
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="shortcut icon" href="img/icono.png">
+  <link rel="shortcut icon" href="img/ICONO.png">
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
