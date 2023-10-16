@@ -60,7 +60,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
   
   $invoice = new Invoice();
   require ('conexion.php');
-  
+
   if (!empty($_POST['action']) && $_POST['action'] == 'loadItemsList') {
 	  $invoice->loadItemsList();
   }
@@ -80,6 +80,10 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
 				  $searchValue = $_POST['search']['value'];
   
 				  $invoiceData = $invoice->getInvoiceList($length, $start, $searchValue);
+				  if ($invoiceData === false) {
+					echo json_encode(array('error' => 'Error al obtener datos de la base de datos.'));
+					exit();
+				}
 				  $totalRecords = $invoice->getTotalRecords($searchValue);
   
 				  $data = array();
