@@ -16,7 +16,7 @@ if ($entorno == 'local') {
     $db_name = 'naxsan';
 } else {
     $db_host = 'localhost';
-    $db_user = 'admin-81de';
+    $db_user = 'airsoftb_naxsan';
     $db_password = '71811452Ale*';
     $db_name = 'airsoftb_naxsan';
 }
