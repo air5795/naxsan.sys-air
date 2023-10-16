@@ -136,7 +136,7 @@ $(document).ready(function() {
       { data: 'fecha_cotizacion', title: 'Fecha Creación' },
       { data: 'cliente_nombre', title: 'Nombre del Cliente', searchable: true },
       { data: 'nota', title: 'nota' },
-      { data: 'total_antes_impuestos', title: 'Total (Monto)' },
+      { data: 'total_antes_impuestos', title: 'Total (Monto)'},
       { data: 'id_usuario', title: 'Quien lo Creó ?' },
       { data: 'print_link', title: 'Imprimir' },
       { data: 'edit_link', title: 'Editar' },
@@ -200,22 +200,9 @@ const table = document.querySelector('table');
     table.classList.toggle('table-dark');
 });
 
-
-
-
-
 </script>
-
-
-
+  
 <?php include('inc/footer.php'); ?>
         
-
-        
-        
-       
-
-
-
 </html>
 
