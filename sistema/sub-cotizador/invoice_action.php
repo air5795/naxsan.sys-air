@@ -1,4 +1,5 @@
 <?php
+  date_default_timezone_set('America/La_Paz');
   include 'Invoice.php';
   include 'conexion.php';
   //require ('conexion.php');
