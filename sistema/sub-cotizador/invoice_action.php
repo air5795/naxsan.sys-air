@@ -33,7 +33,19 @@
   
 				  $data = array();
 				  foreach ($invoiceData as $invoiceDetails) {
-					  $invoiceDate = date("d/M/Y, H:i:s", strtotime($invoiceDetails["fecha_cotizacion"]));
+					// Establecer la zona horaria a La Paz, Bolivia
+					date_default_timezone_set('America/La_Paz');
+
+					// Obtener la fecha de la base de datos (suponiendo que $invoiceDetails["fecha_cotizacion"] contiene la fecha de la base de datos)
+					$fechaBaseDatos = $invoiceDetails["fecha_cotizacion"];
+
+					// Convertir la fecha a un formato específico con la zona horaria de La Paz
+					$invoiceDate = date("d/M/Y, H:i:s", strtotime($fechaBaseDatos));
+
+					// Imprimir la fecha en el formato deseado y en la zona horaria de La Paz
+					echo $invoiceDate;
+
+					  //$invoiceDate = date("d/M/Y, H:i:s", strtotime($invoiceDetails["fecha_cotizacion"]));
 					  $printLink = '<a class="btn btn-sm btn-outline-danger w-100" target="_blank" href="print_invoice.php?invoice_id=' . $invoiceDetails["id_cotizacion"] . '" title="Imprimir Cotizacion" ><span <i class="bi bi-file-earmark-pdf"></i> PDF</a>';
 					  $editLink = '<a style="background-color:beige; color:#646464" class="btn btn-sm btn-warning w-100" href="edit_invoice.php?update_id=' . $invoiceDetails["id_cotizacion"] . '"  title="Editar Cotizacion"><i class="bi bi-pencil-square"></i> </a>';
 					  $deleteLink = '<a class="btn btn-sm btn-danger w-100 deleteInvoice" href="#" id="' . $invoiceDetails["id_cotizacion"] . '" class="deleteInvoice"  title="Eliminar Cotizacion"><i class="bi bi-trash-fill"></i> </a>';
