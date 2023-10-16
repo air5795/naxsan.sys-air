@@ -7,9 +7,10 @@ include 'conexion.php';
 $invoice = new Invoice();
 
 if (!empty($_POST['companyName']) && $_POST['companyName'] && !empty($_POST['invoiceId']) && $_POST['invoiceId']) {
-	$invoice->updateInvoice($_POST);
-	header("Location:index.php");
+    $invoice->updateInvoice($_POST);
+    echo '<script>window.localStorage.setItem("updateSuccess", "true");</script>';
 }
+
 if (!empty($_GET['update_id']) && $_GET['update_id']) {
 	$invoiceValues = $invoice->getInvoice($_GET['update_id']);
 	$invoiceItems = $invoice->getInvoiceItems($_GET['update_id']);
@@ -349,4 +350,23 @@ document.addEventListener("DOMContentLoaded", function() {
         textarea.rows = rowCount;
     });
 });
+</script>
+
+<script>
+	// Verificar si la cotización se actualizó correctamente
+if (localStorage.getItem("updateSuccess")) {
+    Swal.fire({
+        icon: "success",
+        title: "Cotización actualizada correctamente.",
+        showConfirmButton: false,
+        timer: 2000 // Esperar 2 segundos antes de cerrar la alerta
+    }).then(function() {
+        // Redirigir a index.php después de cerrar la alerta
+        window.location.href = "index.php";
+    });
+    
+    // Limpiar la marca en localStorage para evitar mostrar la alerta en futuros cargos de la página
+    localStorage.removeItem("updateSuccess");
+}
+
 </script>
