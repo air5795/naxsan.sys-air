@@ -57,7 +57,8 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
   
   
   include 'invoice.php';
-  require ('conexion.php');
+  include 'conexion.php';
+  //require ('conexion.php');
   $invoice = new Invoice();
   
 
