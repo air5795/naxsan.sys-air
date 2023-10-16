@@ -55,10 +55,11 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
 
 
   
-  include 'conexion.php';
+  
   include 'invoice.php';
   
   $invoice = new Invoice();
+  require ('conexion.php');
   
   if (!empty($_POST['action']) && $_POST['action'] == 'loadItemsList') {
 	  $invoice->loadItemsList();
