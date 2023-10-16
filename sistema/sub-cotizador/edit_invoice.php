@@ -1,10 +1,9 @@
 <?php
-
 session_start();
 include "../../conexion.php";
-
 include('inc/header.php');
 include 'Invoice.php';
+include 'conexion.php';
 $invoice = new Invoice();
 
 if (!empty($_POST['companyName']) && $_POST['companyName'] && !empty($_POST['invoiceId']) && $_POST['invoiceId']) {
