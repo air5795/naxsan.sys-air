@@ -1,25 +1,18 @@
 <?php
 
+require ('conexion.php');
+
 class Invoice
 {
-    private $host = 'localhost:3316';
-    private $user = 'root';
-    private $password = '';
-    private $database = 'naxsan';
+
     private $invoiceOrderTable = 'cotizacion';
     private $invoiceOrderItemTable = 'items_cotizacion';
     private $dbConnect = false;
 
     public function __construct()
     {
-        if (!$this->dbConnect) {
-            $conn = new mysqli($this->host, $this->user, $this->password, $this->database);
-            if ($conn->connect_error) {
-                die("Error failed to connect to MySQL: " . $conn->connect_error);
-            } else {
-                $this->dbConnect = $conn;
-            }
-        }
+        global $conexion;
+        $this->dbConnect = $conexion;
     }
 
     private function getData($sqlQuery)
