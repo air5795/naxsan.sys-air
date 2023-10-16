@@ -7,6 +7,8 @@
     include 'Invoice.php';
     $invoice = new Invoice();
 
+    require ('conexion.php');
+
 ?>
 
 
