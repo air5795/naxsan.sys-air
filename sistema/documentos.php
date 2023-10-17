@@ -24,7 +24,7 @@
 
         
         <div id="layoutSidenav_content">
-            <div class="container-fluid px-4 row">
+            <div class="container-fluid px-4 ">
                 <h1 class="mt-4 col"><i class="fa-solid fa-folder-open"></i> Lista de Documentos de la Empresa</h1>   
                 <hr>
                 <!-- contenido del sistema --> 
@@ -35,19 +35,19 @@
                             <h3 style="color: #ff5301;">Cargar Documentos</h3> 
                             <div style="width:100%">
                                 <form style="text-align: center;" method="POST" action="documentos_CargarFicheros.php" enctype="multipart/form-data">
-                                <div style="text-align:center; width:100%" class="form-group btn btn-danger p-2">
+                                <div style="text-align:center; width:100%" class="form-group btn btn-danger w-100">
                                 <label style="color: white;" class="btn w-100" for="my-file-selector">Carga tu Archivo aqui<br><br>
                                 <input required="" type="file" name="file" id="exampleInputFile"> 
                                 </label>
                                 </div> <br><br>
-                                <button  class="btn btn-primary " type="submit">Subir archivo al sistema --></button>
+                                <button  class="btn btn-primary w-100 " type="submit">Subir archivo al sistema --></button>
                                 </form>
                                 </div>
                         </div>
 
                         <div class="col-sm-6">
                             <div class="table-responsive">
-                                <table class="table table-sm ">
+                                <table style="font-size: 10px;" class="table table-sm ">
                                 <thead class="table-light">
                                 <tr>
                                 <th>#</th>
@@ -86,8 +86,8 @@
                                      ?>
 
                                 </td>
-                                <td><a title="Descargar Archivo" href="subidas/<?php echo $archivos[$i]; ?>" download="<?php echo $archivos[$i]; ?>" class="btn btn-primary" style="font-size:14px;"> <i class="fa-solid fa-download"></i> Descargar </a></td>
-                                <td><a title="Eliminar Archivo" href="documentos_Eliminar.php?name=subidas/<?php echo $archivos[$i]; ?>" class="btn btn-danger" style="font-size:14px;" onclick="return confirm('Esta seguro de eliminar el archivo?');"> <i class="fa-solid fa-trash"></i> Eliminar </a></td>
+                                <td><a title="Descargar Archivo" href="subidas/<?php echo $archivos[$i]; ?>" download="<?php echo $archivos[$i]; ?>" class="btn btn-primary" style="font-size:14px;">  Descargar </a></td>
+                                <td><a title="Eliminar Archivo" href="documentos_Eliminar.php?name=subidas/<?php echo $archivos[$i]; ?>" class="btn btn-danger" style="font-size:14px;" onclick="return confirm('Esta seguro de eliminar el archivo?');">  Eliminar </a></td>
                                 </tr>
                                 <?php }?> 
 
