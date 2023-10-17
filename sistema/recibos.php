@@ -97,6 +97,7 @@ if (!empty($_POST)) {
             <div class="container-fluid px-4">
                 <div class="container-fluid px-4 ">
 
+                
                     <h1 class="mt-4 col"><i class="fa-solid fa-receipt"></i></i> <strong>Generar </strong>Recibos NA<span style="color:#e10101;">XS</span>AN </h1>
 
 
