@@ -155,7 +155,7 @@ $invoice = new Invoice();
 
 					<div class="input-group input-group-sm mb-3">
 						<span class="input-group-text detalle1 w-50" id="inputGroup-sizing-sm"><i style="writing-mode: tb;" class="bi bi-clock-history"></i> HORA DE COTIZACION</span>
-						<input class="form-control w-50" type="text" name="tiempo_entrega" id="tiempo_entrega" placeholder="Tiempo de Entrega" value="<?php echo date('H:i'); ?>">
+						<input class="form-control w-50" type="time" name="tiempo_entrega" id="tiempo_entrega" placeholder="Tiempo de Entrega" value="<?php echo date('H:i'); ?>">
 					</div>
 
 
