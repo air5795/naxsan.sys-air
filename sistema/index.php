@@ -31,6 +31,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <link rel="shortcut icon" href="../img/ICONO.png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <title>NAXSAN</title>
         
@@ -189,7 +190,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; axsanempresa@gmail.com @airsoft</div>
+                            <div class="text-muted">Copyright &copy; @irsoft - 2023</div>
                             <div>
                                 
                             </div>
