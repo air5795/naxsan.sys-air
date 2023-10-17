@@ -133,9 +133,6 @@ if (!empty($_SESSION['active'])) {
               <label for="disabledTextInput" class="form-label font-weight-bold"><i class="bi bi-lock"></i> Contraseña</label>
               <input type="password" name="clave" id="disabledTextInput" class="form-control  border-0" placeholder="Colocar Contraseña" style="color: #ff8a8a !important;background-color: #232323;font-weight: 600;">
             </div>
-
-            <a href="#" class="form-text text-muted text-decoration-none">Has olvidado tu contraseña ?</a>
-
             <div style="background-color: #fff400;color: #4f4f4f;padding: 0;font-weight: 600;border: 2px solid #ffb100;" class="alert form-text text-center"><?php echo isset($alert) ? $alert : ''; ?></div>
             <button type="submit" class="btn btn-primary w-100 border-0">Iniciar Sesión <i class="bi bi-chevron-right"></i></button>
             </fieldset>
@@ -149,7 +146,7 @@ if (!empty($_SESSION['active'])) {
         <div class="text-center px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mt-auto">
         <p class="d-inline-block mb-0 ">Licencia :  </p> <a style="color: greenyellow !IMPORTANT;" href="#" class=" text-decoration-none"> ACTIVADO <i class="bi bi-check2-circle"></i> </a>
           
-          <HR></HR>
+            <br>
           <p class="d-inline-block mb-0 ">@irsoft-  </p> <a href="#" class=" text-decoration-none"> SYSTEMS </a> -  Derechos Reservados © 2023 <BR>
         </div>
       </div>
