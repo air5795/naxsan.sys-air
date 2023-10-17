@@ -12,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <link rel="shortcut icon" href="../img/ICONO.png">
         <title>SISPONCELET</title>
         
     </head>
@@ -27,7 +28,7 @@
                     <div>
                     <h1 class="mt-4"><i class="fa-solid fa-calculator"></i> Calculadora de Experiencia Comercializadora </h1>    
                         <ol class="breadcrumb mb-2 ">
-                            <li class="breadcrumb-item active">Poncelet / Calcular Experiencia</li> 
+                            <li class="breadcrumb-item active">Calcular Experiencia</li> 
                         </ol>
                     </div>   
                         
@@ -35,7 +36,7 @@
                        <!-- calculadora 1--> 
                         
                        <form action="calComer.php" method="post">
-                       <div class="row mb-3">
+                       <div class="row ">
                             
 
                             <div class="col-md-3">
@@ -100,7 +101,7 @@
                              
                             
                         } else {
-                            echo "<p class='alert alert-danger col-md-3 '> LLenar los Datos </p> ";
+                            echo "<p style='color:red;' class='p-3 '> LLenar los Datos </p> ";
                         }
                              
                              ?>
@@ -113,7 +114,7 @@
 
                             <div class="col-md-3">
                                  <div class=" mb-3 mb-md-0">
-                                    <input type="submit" value="Calcular la Experiencia">
+                                    <input class="btn btn-success" type="submit" value="Calcular la Experiencia">
                                  </div>
                              </div>
 
@@ -135,7 +136,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; poncelet.bo@gmail.com @leiglesSoft</div>
+                        <div class="text-muted">Copyright &copy; @irsoft - 2023</div>
                             <div>
                                 
                             </div>
