@@ -127,14 +127,18 @@ if (!empty($_SESSION['active'])) {
 
             <div class="mb-4">
               <label for="disabledTextInput" class="form-label font-weight-bold"><i class="bi bi-person"></i> Usuario</label>
-              <input type="text" name="usuario" id="disabledTextInput" class="form-control border-0" placeholder="Colocar Usuario" style="color: #ff8a8a !important;">
+              <input type="text" name="usuario" id="disabledTextInput" class="form-control border-0" placeholder="Colocar Usuario" style="color: #ff8a8a !important;background-color: #232323;font-weight: 600;">
             </div>
             <div class="mb-4">
               <label for="disabledTextInput" class="form-label font-weight-bold"><i class="bi bi-lock"></i> Contraseña</label>
-              <input type="password" name="clave" id="disabledTextInput" class="form-control  border-0" placeholder="Colocar Contraseña" style="color: #ff8a8a !important;">
+              <input type="password" name="clave" id="disabledTextInput" class="form-control  border-0" placeholder="Colocar Contraseña" style="color: #ff8a8a !important;background-color: #232323;font-weight: 600;">
             </div>
 
             <a href="#" class="form-text text-muted text-decoration-none">Has olvidado tu contraseña ?</a>
+            
+
+            
+
             <div class="alert form-text text-center"><?php echo isset($alert) ? $alert : ''; ?></div>
             <button type="submit" class="btn btn-primary w-100 border-0">Iniciar Sesión <i class="bi bi-chevron-right"></i></button>
             </fieldset>
