@@ -14,6 +14,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <link rel="shortcut icon" href="../img/ICONO.png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <title>NAXSAN</title>    
     </head>
 
@@ -24,15 +25,18 @@
 
         
         <div id="layoutSidenav_content">
-            <div class="container-fluid px-4 ">
-                <h1 class="mt-4 col"><i class="fa-solid fa-folder-open"></i> Lista de Documentos de la Empresa</h1>   
+            <div class="container px-4 ">
+            <h1 class="mt-4 col text-md-left d-none d-sm-block"><i class="fa-solid fa-folder-open"></i> Documentos y Recursos Empresa NAXSAN</h1>
+            <h1 class="mt-4 col text-center d-sm-none"><i class="fa-solid fa-folder-open"></i> Documentos NAXSAN</h1>
+
+   
                 <hr>
                 <!-- contenido del sistema --> 
                 <div class="container text-center">
                     <div class="row">
 
                         <div class="col-sm-6">
-                            <h3 style="color: #ff5301;">Cargar Documentos</h3> 
+                            <h3 style="color: #ff5301;text-align:left ;">Cargar Documentos</h3> 
                             <div style="width:100%">
                                 <form style="text-align: center;" method="POST" action="documentos_CargarFicheros.php" enctype="multipart/form-data">
                                 <div style="text-align:center; width:100%" class="form-group btn btn-danger w-100">
@@ -47,11 +51,12 @@
 
                         <div class="col-sm-6">
                             <div class="table-responsive">
-                                <table style="font-size: 10px;" class="table table-sm ">
+                                <table style="font-size: 11px;" class="table table-sm text-sm-center " >
                                 <thead class="table-light">
                                 <tr>
                                 <th>#</th>
                                 <th>Nombre del Archivo</th>
+                               
                                 <th>Fecha de subida </th>
                                 <th>Descargar</th>
                                             
@@ -86,8 +91,8 @@
                                      ?>
 
                                 </td>
-                                <td><a title="Descargar Archivo" href="subidas/<?php echo $archivos[$i]; ?>" download="<?php echo $archivos[$i]; ?>" class="btn btn-primary" style="font-size:14px;">  Descargar </a></td>
-                                <td><a title="Eliminar Archivo" href="documentos_Eliminar.php?name=subidas/<?php echo $archivos[$i]; ?>" class="btn btn-danger" style="font-size:14px;" onclick="return confirm('Esta seguro de eliminar el archivo?');">  Eliminar </a></td>
+                                <td><a title="Descargar Archivo" href="subidas/<?php echo $archivos[$i]; ?>" download="<?php echo $archivos[$i]; ?>" class="btn btn-primary" style="font-size:14px;"> <i class="fa-sharp fa-solid fa-download"></i>  </a></td>
+                                <td><a title="Eliminar Archivo" href="documentos_Eliminar.php?name=subidas/<?php echo $archivos[$i]; ?>" class="btn btn-danger" style="font-size:14px;" onclick="return confirm('Esta seguro de eliminar el archivo?');">  <i class="fa-solid fa-trash"></i> </a></td>
                                 </tr>
                                 <?php }?> 
 
@@ -107,7 +112,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy;axsanempresa@gmail.com @airsoft</div>
+                            <div class="text-muted">Copyright &copy; @irsoft - 2023</div>
                             <div>
                                 
                             </div>
@@ -126,3 +131,4 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
     </body>
 </html>
+
