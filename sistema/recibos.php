@@ -80,7 +80,9 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <link rel="shortcut icon" href="../img/ICONO.png">
     <title>NAXSAN</title>
+    
 
 </head>
 
@@ -207,23 +209,31 @@ if (!empty($_POST)) {
                             <div class="">
 
                                 <nav class="navbar bg-light">
-                                    <div class="container-fluid ">
+                                    <div class="container-fluid row">
+                                    <div class="col-sm-3">
                                         <a class="navbar-brand text-black"> <i class="fa-solid fa-table-list"></i> Lista de Recibos </a>
-                                        <form class="d-flex" role="search">
+                                        <form class="d-flex " role="search">
+                                            </div>
+                                            <div class="col-sm-4">
+                                            <button style="margin:2px;width: max-content; ;" class="btn btn-sm btn-secondary w-100 " > <strong>  &Sigma;  :  </strong> TOTAL:  
+                                            <?php echo number_format($totales2,2,'.',',').' Bs'?> </button>
+                                            </div>
 
-                                        <button style="margin:2px;" class="btn btn-sm btn-secondary" type="submit"> <strong>  &Sigma;  :  </strong> Sumatoria TOTAL RECIBOS Monto (Bs) :  
-                                      <?php echo number_format($totales2,2,'.',',').' Bs'?> </button>
-
-                                            <button style="margin:2px;" class="btn btn-sm btn-secondary" type="submit"> <strong> N° de Recibos  :  </strong> <?php echo $totales; ?> </button>
+                                            <div class="col-sm-4">
+                                                <button style="margin:2px;width: max-content;" class="btn btn-sm btn-success w-100" > <strong> N° de Recibos  :  </strong> <?php echo $totales; ?> </button>
                     
-                                            <a href="#" class="btn btn-danger btn-sm" style="margin:2px;"> <i class="fa-solid fa-print"></i> Imprimir Reporte de Recibos</a>
+                                            </div>
+                                            
+
+                                           
+                                            
                                         </form>
                                     </div>
                                 </nav>
 
 
 
-                                <table>
+                                <div class="table-responsive">
                                     <table id="tablas"  class="table table-bordered table-hover" style="font-size:11px ;">
                                         <thead class="table-secondary">
                                             <tr class="">
@@ -312,7 +322,7 @@ if (!empty($_POST)) {
 
                                                             <a data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $data['id_recibo']; ?> " class="btn btn-warning btn-sm" href=""><i class="fa-regular fa-pen-to-square"></i> Editar </a>
                                                             <a data-bs-toggle="modal" data-bs-target="#exampleModali<?php echo $data['id_recibo']; ?> " class="btn btn-danger btn-sm" href=""><i class="fa-solid fa-trash"></i> Eliminar </a>
-                                                            <a data-bs-toggle="modal" data-bs-target="#exampleModalp<?php echo $data['id_recibo']; ?> " class="btn btn-outline-danger  btn-sm  " href=""><img src="img/pdf.svg" height="20px" width="20px"> IMPRIMIR RECIBO </a>
+                                                            <a data-bs-toggle="modal" data-bs-target="#exampleModalp<?php echo $data['id_recibo']; ?> " class="btn btn-outline-danger  btn-sm  " href=""><img src="img/pdf.png" height="20px" width="20px"> IMPRIMIR RECIBO </a>
 
                                                         </div>
 
@@ -320,6 +330,8 @@ if (!empty($_POST)) {
 
                                                     </td>
                                                 </tr>
+
+                                                
 
                                                 <!-- Modal editar  -->
                                                 <div class="modal fade" id="exampleModal<?php echo $data['id_recibo']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -419,6 +431,8 @@ if (!empty($_POST)) {
 
                                     </table>
 
+                                    </div>
+
 
                             </div>
                         </div>
@@ -462,7 +476,7 @@ if (!empty($_POST)) {
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; poncelet.bo@gmail.com @leiglesSoft</div>
+                <div class="text-muted">Copyright &copy; @irsoft - 2023</div>
                     <div>
 
                     </div>
