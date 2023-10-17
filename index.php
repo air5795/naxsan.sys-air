@@ -135,11 +135,8 @@ if (!empty($_SESSION['active'])) {
             </div>
 
             <a href="#" class="form-text text-muted text-decoration-none">Has olvidado tu contraseña ?</a>
-            
 
-            
-
-            <div class="alert form-text text-center"><?php echo isset($alert) ? $alert : ''; ?></div>
+            <div style="background-color: #fff400;color: #4f4f4f;padding: 0;font-weight: 600;border: 2px solid #ffb100;" class="alert form-text text-center"><?php echo isset($alert) ? $alert : ''; ?></div>
             <button type="submit" class="btn btn-primary w-100 border-0">Iniciar Sesión <i class="bi bi-chevron-right"></i></button>
             </fieldset>
           </form>
