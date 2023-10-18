@@ -15,6 +15,8 @@ if ($_POST["operacion"] == "ingreso") {
         date_default_timezone_set('America/La_Paz');
         $hora_actual = date("H:i:s");
 
+        $ingreso = date("Y-m-d H:i:s");
+
 
         // Determinar el turno según la hora actual
         // 10:00 > 12:00 
@@ -38,13 +40,15 @@ if ($_POST["operacion"] == "ingreso") {
         if ($resultado['cantidad'] < 2) {
 
 
-        $stmt = $conexion->prepare("INSERT INTO asis(salida, usuario_id, turno) VALUES(:salida, :usuario_id, :turno)");
+        $stmt = $conexion->prepare("INSERT INTO asis(salida, usuario_id, turno, ingreso, fecha_registro) VALUES(:salida, :usuario_id, :turno, :ingreso, :fecha_registro)");
 
         $resultado = $stmt->execute(
             array(
-                ':salida'       => $salida,
-                ':usuario_id'   => $usuario,
-                ':turno'        => $turno
+                ':salida'               => $salida,
+                ':usuario_id'           => $usuario,
+                ':turno'                => $turno,
+                ':ingreso'              => $ingreso,
+                ':fecha_registro'       => $ingreso
             )
         );
 
