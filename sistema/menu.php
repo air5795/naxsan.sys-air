@@ -64,7 +64,7 @@ if (empty($_SESSION['active'])) {
                                                                             echo '<img style="width:35px; height:35px;" src="../img/alberto.png" >';
                                                                                 //echo $_SESSION['iduser'];
                                                                             }elseif ($_SESSION['iduser'] == 35 ) {
-                                                                                echo '<img style="width:35px; height:35px;" src="../sistema/img/lucia.png" >';
+                                                                                echo '<img style="width:35px; height:35px;" src="../img/lucia.png" >';
                                                                                     //echo $_SESSION['iduser'];
                                                                                 }
                                                 
