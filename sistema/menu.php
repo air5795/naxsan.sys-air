@@ -63,7 +63,10 @@ if (empty($_SESSION['active'])) {
                                                                         }elseif ($_SESSION['iduser'] == 30 ) {
                                                                             echo '<img style="width:35px; height:35px;" src="../img/alberto.png" >';
                                                                                 //echo $_SESSION['iduser'];
-                                                                            }
+                                                                            }elseif ($_SESSION['iduser'] == 35 ) {
+                                                                                echo '<img style="width:35px; height:35px;" src="../sistema/img/lucia.png" >';
+                                                                                    //echo $_SESSION['iduser'];
+                                                                                }
                                                 
                                                 ?> </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -91,7 +94,7 @@ if (empty($_SESSION['active'])) {
                             </a>
 
                             <?php
-                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 12 or $_SESSION['iduser'] == 28 or $_SESSION['iduser'] == 29 or $_SESSION['iduser'] == 30 or $_SESSION['iduser'] == 34 ) {
+                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 12 or $_SESSION['iduser'] == 28 or $_SESSION['iduser'] == 29 or $_SESSION['iduser'] == 30 or $_SESSION['iduser'] == 34 or $_SESSION['iduser'] == 35 ) {
                             
                         
                         ?> 
@@ -292,7 +295,7 @@ if (empty($_SESSION['active'])) {
                             ?>
                             
                             <?php
-                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 12 or $_SESSION['iduser'] == 28 or $_SESSION['iduser'] == 29 or $_SESSION['iduser'] == 30 or $_SESSION['iduser'] == 34 ) {
+                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 12 or $_SESSION['iduser'] == 28 or $_SESSION['iduser'] == 29 or $_SESSION['iduser'] == 30 or $_SESSION['iduser'] == 34 or $_SESSION['iduser'] == 35 ) {
                             
                         
                         ?>
@@ -374,7 +377,7 @@ if (empty($_SESSION['active'])) {
 
                                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse1" aria-expanded="false" aria-controls="pagesCollapseError">
                                                 <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
-                                                    Productos BD Principal <span class="pf pf-mastercard-securecode"></span>
+                                                    Productos  <span class="pf pf-mastercard-securecode"></span>
                                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                                 </a>
 
@@ -386,19 +389,7 @@ if (empty($_SESSION['active'])) {
                                                     </nav>
                                                 </div>
 
-                                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse12" aria-expanded="false" aria-controls="pagesCollapseError">
-                                                <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
-                                                    Productos BD Secundario
-                                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                                </a>
-
-                                                <div class="collapse" id="pagesCollapse12" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                                    <nav class="sb-sidenav-menu-nested nav">
-                                                        <a class="nav-link" href="#">Gestor Productos</a>
-                                                    
-                                                        
-                                                    </nav>
-                                                </div>
+                                                
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-comments-dollar"></i></div>
