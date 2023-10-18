@@ -48,7 +48,7 @@ if ($_POST["operacion"] == "ingreso") {
                 ':usuario_id'           => $usuario,
                 ':turno'                => $turno,
                 ':ingreso'              => $ingreso,
-                ':fecha_registro'       => $ingreso
+                ':fecha_registro'       => $fecha_actual
             )
         );
 

@@ -622,6 +622,7 @@
                         contentType: false,
                         processData: false,
                         success: function(data) {
+                            data = data.trim();
                             if (data === 'Registro creado') {
                                 Swal.fire(
                                     'Exitoso!',
@@ -629,6 +630,7 @@
                                     'success'
                                 );
                             } else {
+                                console.log(data);
                                 Swal.fire(
                                     'Error!',
                                     'Ya se han alcanzado los registros para este Día y usuario',
@@ -639,6 +641,7 @@
                             dataTable.ajax.reload();
                             dataTable2.ajax.reload();
                         }
+                        
                     });
                 }
             });
