@@ -75,7 +75,7 @@ include("funciones.php");
         }
 
         if ($fila['usuario_id'] == 'luciacondorical') {
-            $encargado6 = '<span style="font-size:12px;background-color:#f7b7b7;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia Condori Calle </span>'.'<br/>';
+            $encargado6 = '<span style="font-size:12px;background-color:#e4dcff;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia Condori Calle </span>'.'<br/>';
         } else {
             $encargado6 = '';
         }
