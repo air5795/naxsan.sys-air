@@ -5,12 +5,16 @@ include("funciones.php");
 
 if(isset($_POST["id_asistencia"]))
 {
+    date_default_timezone_set('America/La_Paz');
+    $salida = date("Y-m-d H:i:s");
 
-    $stmt = $conexion->prepare("UPDATE asis SET salida = CURRENT_TIMESTAMP, estado = 2 WHERE id_asistencia = :id_asistencia and estado = 1 ;");
+    $stmt = $conexion->prepare("UPDATE asis SET salida = :salida, estado = 2 WHERE id_asistencia = :id_asistencia and estado = 1 ;");
 	
 	$resultado = $stmt->execute(
 		array(
-			':id_asistencia'	=>	$_POST["id_asistencia"]
+			':id_asistencia'	=>	$_POST["id_asistencia"],
+            ':salida'           =>  $salida,
+
 		)
 	);
 	

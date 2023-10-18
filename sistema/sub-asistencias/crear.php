@@ -71,7 +71,7 @@ if ($_POST["operacion"] == "ingreso") {
 
 
 if ($_POST["operacion"] == "Editar") {
-    
+
 
     $stmt = $conexion->prepare("UPDATE asis SET ingreso=:ingreso, salida=:salida, fecha_registro=:fecha_registro, observacion=:observacion, turno=:turno
                                 WHERE id_asistencia = :id_asistencia");
