@@ -38,14 +38,7 @@
         
     </head>
     <body class="sb-nav-fixed">
-    <?php  //include "../menu.php"?>
-
-    <?php 
-    
-    $usuario = $_SESSION['user'];
-    echo $usuario; 
-    ?>
-    
+    <?php  include "../menu.php"?>
 
         <!-- contenido del sistema-->
 
