@@ -1,10 +1,15 @@
 <?php
 session_start();
+if(empty($_SESSION['user'])) {
+    // Si $_SESSION['user'] está vacía, redirige al usuario a la página de inicio de sesión
+    header("Location: login.php"); // Redirige a tu página de inicio de sesión
+    exit(); // Detiene la ejecución del script después de la redirección
+}
+
 date_default_timezone_set('America/La_Paz');
-
-
 include("conexion.php");
 include("funciones.php");
+
 
     $usuario = $_SESSION['user'];
     setlocale(LC_TIME, "spanish");
