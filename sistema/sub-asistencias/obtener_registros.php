@@ -7,11 +7,11 @@ include("conexion.php");
 include("funciones.php");
 
     
-    $usuario = $_SESSION['user'];
+    $usuario_session = $_SESSION['user'];
     
 
     setlocale(LC_TIME, "spanish");
-    $fecha = date("Y-m-d");
+    $fecha = date("Y-m-d H:i:s");
     // Consulta SQL para obtener los datos del usuario
     $query = "SELECT * FROM asis WHERE usuario_id = :usuario and fecha_registro = :fecha ";
 
@@ -28,7 +28,7 @@ include("funciones.php");
 
 
     $stmt = $conexion->prepare($query);
-    $stmt->bindParam(':usuario', $usuario);
+    $stmt->bindParam(':usuario', $usuario_session);
     $stmt->bindParam(':fecha', $fecha);
     $stmt->execute();
     $resultado = $stmt->fetchAll();
