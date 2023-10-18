@@ -11,7 +11,7 @@ include("funciones.php");
     
 
     setlocale(LC_TIME, "spanish");
-    $fecha = date("Y-m-d H:i:s");
+    $fecha = date("Y-m-d");
     // Consulta SQL para obtener los datos del usuario
     $query = "SELECT * FROM asis WHERE usuario_id = :usuario and fecha_registro = :fecha ";
 
