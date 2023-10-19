@@ -3,7 +3,7 @@
     session_start();
     include "../conexion.php";
 
-    $query = mysqli_query($conexion, "SELECT * FROM proyectos");
+    $query = mysqli_query($conexion, "SELECT * FROM proyectos2");
     $result = mysqli_num_rows($query);
     if ($result > 0) {
         while ($data = mysqli_fetch_array($query)) {
@@ -11,7 +11,7 @@
              
         }}
 
-        $sql_tfila = mysqli_query($conexion, "SELECT COUNT(id_proyecto) FROM proyectos;");
+        $sql_tfila = mysqli_query($conexion, "SELECT COUNT(id_proyecto) FROM proyectos2;");
         $result_f = mysqli_fetch_array($sql_tfila);
         $total2 = $result_f['COUNT(id_proyecto)'];
         $total3 =  $total2 + 1;
@@ -30,14 +30,14 @@
 
 
              
-                    $query_insert = mysqli_query($conexion, "INSERT INTO proyectos(pro_nombre,color)
+                    $query_insert = mysqli_query($conexion, "INSERT INTO proyectos2(pro_nombre,color)
                                                                 VALUES('$nombre_p','$color')");
 
 
             if ($query_insert) {
                  
                 $alert = '<p class="alert alert-success"> Guardado Correctamente </p> ';
-                header("Location: proyectos_c.php");
+                header("Location: proyectos_c2.php");
 
             }else{
                 $alert = '<p class="alert alert-danger "> El registro fallo </p> ';
@@ -79,7 +79,7 @@
                     <div class="container-fluid px-4">
                     <div class="container-fluid px-4 ">
                 
-                <h1 class="mt-4 col"><i class="fa-solid fa-sack-dollar"></i> <strong>Gestor de <span> CAJA CHICA NA<SPAN style="color:red">XS</SPAN>AN </strong>   </span></h1>
+                <h1 class="mt-4 col"><i class="fa-solid fa-sack-dollar"></i> <strong>Gestor de <span> CAJA CHICA NA<SPAN style="color:red">XS</SPAN>AN (SUCURSAL :  LA PAZ) </strong>   </span></h1>
                   
                         
                         <hr>
@@ -92,7 +92,7 @@
                               
                         <div class="col-md-4">
 
-                        <form action="proyectos_c.php" method="post" class="fields was-validated " enctype="multipart/form-data" novalidate >
+                        <form action="proyectos_c2.php" method="post" class="fields was-validated " enctype="multipart/form-data" novalidate >
 
                         
                         
@@ -101,11 +101,11 @@
                             
 
                         <?php
-                            $sql_suma_bs = mysqli_query($conexion, "SELECT SUM(g_montoBs) FROM gastos_c;");
+                            $sql_suma_bs = mysqli_query($conexion, "SELECT SUM(g_montoBs) FROM gastos_c2;");
                             $result_sum = mysqli_fetch_array($sql_suma_bs);
                             $total = $result_sum['SUM(g_montoBs)']; 
 
-                            $sql_suma_bs2 = mysqli_query($conexion, "SELECT SUM(montoBs) FROM ingresos_c;");
+                            $sql_suma_bs2 = mysqli_query($conexion, "SELECT SUM(montoBs) FROM ingresos_c2;");
                             $result_sum2 = mysqli_fetch_array($sql_suma_bs2);
                             $total2 = $result_sum2['SUM(montoBs)'];
 
@@ -186,13 +186,13 @@
                             <nav class="bg-light">
                                 <div class="container" style="BACKGROUND-COLOR: #e1e1e1;">
                                     <a class="navbar-brand text-black"> <i class="fa-solid fa-print"></i> Imprimir Reporte por Rango de Fechas </a>
-                                    <form action="reporte_gastosFechas_c.php"  class="form-inline row" method="POST" name="formFechas" id="formFechas">
-                                        <div class="col-sm-3">
+                                    <form action="reporte_gastosFechas_c2.php"  class="form-inline row" method="POST" name="formFechas" id="formFechas">
+                                        <div class="col-sm-3"> 
                                         <label for="">Elegir CAJA CHICA</label>
                                             <select style="width: 100%;font-size:12px ;" name="proyecto" id="select" class=" form-select" required >
                                                 <option value="" >Seleccione una opción : </option>
                                                 <?php
-                                                    $query = mysqli_query($conexion, "SELECT * from proyectos ORDER BY pro_nombre ASC;");
+                                                    $query = mysqli_query($conexion, "SELECT * from proyectos2 ORDER BY pro_nombre ASC;");
                                                     $result = mysqli_num_rows($query);
                                                     if ($result > 0) {
                                                     while ($data = mysqli_fetch_array($query)) {
@@ -265,7 +265,7 @@
                                     color
                                     FROM 
                                         (SELECT @row_number := 0) AS rn,
-                                        proyectos
+                                        proyectos2
                                     ORDER BY 
                                         id_proyecto DESC;
                                     ");
@@ -298,7 +298,7 @@
 
 
 
-                                    $s = mysqli_query($conexion, "SELECT SUM(montoBs) FROM ingresos_c WHERE proyecto = '$pro' ;");   
+                                    $s = mysqli_query($conexion, "SELECT SUM(montoBs) FROM ingresos_c2 WHERE proyecto = '$pro' ;");   
                                     while($rows=mysqli_fetch_array($s)){
                                         $ing = $rows[0];
                                         if (!empty($rows[0]) ) {
@@ -314,7 +314,7 @@
                                 <?php
 
                                     
-                                    $s = mysqli_query($conexion, "SELECT SUM(g_montoBs) FROM gastos_c WHERE g_proyecto = '$pro' and contar = 'si' ;");   
+                                    $s = mysqli_query($conexion, "SELECT SUM(g_montoBs) FROM gastos_c2 WHERE g_proyecto = '$pro' and contar = 'si' ;");   
                                     while($data=mysqli_fetch_array($s)){
                                         $gas = $data[0];
                                         if (!empty($data[0]) ) {
@@ -366,7 +366,7 @@
                             <div class="modal fade " id="exampleModali<?php echo $idp; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content  bg-opacity-80">
-                                            <form action="eliminar_proyectos.php" method="post">
+                                            <form action="eliminar_proyectos2.php" method="post">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Eliminar registro  </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -396,7 +396,7 @@
                             <div class="modal fade " id="exampleModal<?php echo $idp; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content  bg-opacity-80">
-                                            <form action="editar_proyectos.php" method="post">
+                                            <form action="editar_proyectos2.php" method="post">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Editar registro  </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -427,7 +427,7 @@
                             <div class="modal fade " id="exampleModalp<?php echo $idp; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content  bg-opacity-80">
-                                            <form action="pdf_proyectos.php" method="post">
+                                            <form action="pdf_proyectos2.php" method="post">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">PDF: Reporte </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
