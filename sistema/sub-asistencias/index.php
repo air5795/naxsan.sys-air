@@ -30,10 +30,10 @@
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
         
 
-        <link rel="shortcut icon" href="img/ICONOGRANDE2.png">
+        <link rel="shortcut icon" href="../img/ICONO.png">
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SIS-PONCELET</title>
+        <title>NAXSAN</title>
         
         
     </head>
@@ -68,7 +68,7 @@
 
         <div class="row">
 
-                <div class="col-sm-3">
+                <div class="col-sm-3" style="padding:11px">
                         <div class="container-clock" style="text-align: center;"> 
                             <h1 style="font-size: 70px;" id="time">00:00:00</h1>
                             <p style="color:coral;font-weight: 600;" id="date">date</p>
@@ -128,7 +128,7 @@
         
 
 
-        <div class="table-responsive" style="font-size: 12px; width:100%">
+        <div class="table-responsive" style="font-size: 12px;width:100%;background-color: #f9f9f9;border-radius: 25px;padding: 18px;">
             <h3><i class="bi bi-calendar3"></i> Todos los Registros </h3>
             <table id="datos_usuario2" class="table table-hover table-striped table-bordered" style="width:100%; text-align:center" >
                 <thead>

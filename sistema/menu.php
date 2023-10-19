@@ -66,7 +66,10 @@ if (empty($_SESSION['active'])) {
                                                                             }elseif ($_SESSION['iduser'] == 35 ) {
                                                                                 echo '<img style="width:35px; height:35px;" src="../img/lucia.png" >';
                                                                                     //echo $_SESSION['iduser'];
-                                                                                }
+                                                                                }elseif ($_SESSION['iduser'] == 36 ) {
+                                                                                    echo '<img style="width:35px; height:35px;" src="../img/cristian.png" >';
+                                                                                        //echo $_SESSION['iduser'];
+                                                                                    }
                                                 
                                                 ?> </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -94,7 +97,7 @@ if (empty($_SESSION['active'])) {
                             </a>
 
                             <?php
-                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 12 or $_SESSION['iduser'] == 28 or $_SESSION['iduser'] == 29 or $_SESSION['iduser'] == 30 or $_SESSION['iduser'] == 34 or $_SESSION['iduser'] == 35 ) {
+                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 12 or $_SESSION['iduser'] == 28 or $_SESSION['iduser'] == 29 or $_SESSION['iduser'] == 30 or $_SESSION['iduser'] == 34 or $_SESSION['iduser'] == 35 or $_SESSION['iduser'] == 36 ) {
                             
                         
                         ?> 
@@ -193,7 +196,7 @@ if (empty($_SESSION['active'])) {
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#cajachica2" aria-expanded="false" aria-controls="collapsePages">
                                             <div class="sb-nav-link-icon"><i class="fa-solid fa-sack-dollar"></i></div>
-                                            Caja Chica  
+                                            Caja Chica POTOSI
                                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                         </a>
 
@@ -295,7 +298,7 @@ if (empty($_SESSION['active'])) {
                             ?>
                             
                             <?php
-                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 12 or $_SESSION['iduser'] == 28 or $_SESSION['iduser'] == 29 or $_SESSION['iduser'] == 30 or $_SESSION['iduser'] == 34 or $_SESSION['iduser'] == 35 ) {
+                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 12 or $_SESSION['iduser'] == 28 or $_SESSION['iduser'] == 29 or $_SESSION['iduser'] == 30 or $_SESSION['iduser'] == 34 or $_SESSION['iduser'] == 35 or $_SESSION['iduser'] == 36 ) {
                             
                         
                         ?>
