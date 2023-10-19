@@ -190,11 +190,10 @@ if (empty($_SESSION['active'])) {
                             <?php
                             }
                         if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 29 ) {
-                            
-                        
                         ?>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#cajachica2" aria-expanded="false" aria-controls="collapsePages">
+
+                                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#cajachica2" aria-expanded="false" aria-controls="collapsePages">
                                             <div class="sb-nav-link-icon"><i class="fa-solid fa-sack-dollar"></i></div>
                                             Caja Chica POTOSI
                                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
