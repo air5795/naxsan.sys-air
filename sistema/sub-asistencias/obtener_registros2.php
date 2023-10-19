@@ -68,10 +68,18 @@ $filtered_rows = $stmt->rowCount();
         }
 
         if ($fila['usuario_id'] == 'luciacondorical') {
-            $encargado6 = '<span style="font-size:12px;background-color:#f7b7b7;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia Condori Calle </span>'.'<br/>';
+            $encargado6 = '<span style="font-size:12px;background-color:#e4dcff;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia Condori Calle </span>'.'<br/>';
         } else {
             $encargado6 = '';
         }
+
+        if ($fila['usuario_id'] == 'cristiancordero') {
+            $encargado7 = '<span style="font-size:12px;background-color:#dcffeb;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Cristian Cordero Iglesias </span>'.'<br/>';
+        } else {
+            $encargado7 = '';
+        }
+
+        
 
         //fecha Ingreso
 
@@ -117,7 +125,7 @@ $filtered_rows = $stmt->rowCount();
 
         $sub_array = array();
         $sub_array[] = $fila['id_asistencia'];
-        $sub_array[] = $encargado1.$encargado2.$encargado3.$encargado4.$encargado5.$encargado6;
+        $sub_array[] = $encargado1.$encargado2.$encargado3.$encargado4.$encargado5.$encargado6.$encargado7;
  
         $sub_array[] = $ingreso;
         $sub_array[] = $salida;

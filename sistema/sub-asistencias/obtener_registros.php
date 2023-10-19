@@ -80,6 +80,12 @@ include("funciones.php");
             $encargado6 = '';
         }
 
+        if ($fila['usuario_id'] == 'cristiancordero') {
+            $encargado7 = '<span style="font-size:12px;background-color:#dcffeb;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Cristian Cordero Iglesias </span>'.'<br/>';
+        } else {
+            $encargado7 = '';
+        }
+
         
 
 
@@ -113,7 +119,7 @@ include("funciones.php");
         $sub_array = array();
         $sub_array[] = '<button type="button" name="salida" id="'.$fila["id_asistencia"].'" class="btn btn-danger btn-sm boton-w salida"> Salida </button>';
         $sub_array[] = '<button type="button" name="editar" id="'.$fila["id_asistencia"].'" class="btn btn-warning btn-sm boton-w  editar" style="background-color: #fbe806;color: #505050; color:#767676;"><i class="fa-solid fa-pencil"></i>  </button>';
-        $sub_array[] = $encargado1.$encargado2.$encargado3.$encargado4.$encargado5.$encargado6;
+        $sub_array[] = $encargado1.$encargado2.$encargado3.$encargado4.$encargado5.$encargado6.$encargado7;
 
         
         $sub_array[] = $ingreso;
