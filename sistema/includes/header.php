@@ -69,7 +69,10 @@ if (empty($_SESSION['active'])) {
                                                                                 }elseif ($_SESSION['iduser'] == 36 ) {
                                                                                     echo '<img style="width:35px; height:35px;" src="../sistema/img/cristian.png" >';
                                                                                         //echo $_SESSION['iduser'];
-                                                                                    }
+                                                                                    }elseif ($_SESSION['iduser'] == 37 ) {
+                                                                                        echo '<img style="width:35px; height:35px;" src="../sistema/img/denis.png" >';
+                                                                                            //echo $_SESSION['iduser'];
+                                                                                        }
 
                                                 
                                                 ?> </a>
@@ -182,8 +185,7 @@ if (empty($_SESSION['active'])) {
 
 
                                 
-                            <div class="sb-sidenav-menu-heading " style="color:#ff5050; font-size: medium;  text-transform: none; background-color: #38383869;" >
-                            <i class="fa-solid fa-cart-shopping"></i> Comercializadora</div>
+                            
 
 
                             <?php
@@ -192,6 +194,8 @@ if (empty($_SESSION['active'])) {
                             
                         
                         ?>
+                        <div class="sb-sidenav-menu-heading " style="color:#ff5050; font-size: medium;  text-transform: none; background-color: #38383869;" >
+                            <i class="fa-solid fa-cart-shopping"></i> Comercializadora</div>
 
                                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#cajachica2" aria-expanded="false" aria-controls="collapsePages">
                                             <div class="sb-nav-link-icon"><i class="fa-solid fa-sack-dollar"></i></div>
@@ -244,7 +248,12 @@ if (empty($_SESSION['active'])) {
 
 
 
-
+                                                    <?php
+                            }
+                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 35 ) {
+                            
+                        
+                        ?>
 
 
 
@@ -521,6 +530,13 @@ if (empty($_SESSION['active'])) {
 
                                             </nav>
                                         </div>
+
+                                        <?php
+                            }
+                        if ($_SESSION['rol'] == 1 or $_SESSION['iduser'] == 36 ) {
+                            
+                        
+                        ?>
 
 
                                 <div class="sb-sidenav-menu-heading" style="color: #ff5050; font-size: medium; text-transform: none; background-color: #38383869;"><i class="fa-solid fa-wrench"></i> Constructora</div>
