@@ -75,7 +75,7 @@
         <!-- contenido del sistema-->
 
         <div id="layoutSidenav_content">
-                <main>
+                
                     <div class="container-fluid px-4">
                     <div class="container-fluid px-4 ">
                 
@@ -90,7 +90,7 @@
 
                         <div class="row">
                               
-                        <div class="col-md-4">
+                        <div class="col-sm-4">
 
                         <form action="proyectos_c.php" method="post" class="fields was-validated " enctype="multipart/form-data" novalidate >
 
@@ -183,57 +183,7 @@
                        
                             <div class="">
 
-                            <nav class="bg-light">
-                                <div class="container" style="BACKGROUND-COLOR: #e1e1e1;">
-                                    <a class="navbar-brand text-black"> <i class="fa-solid fa-print"></i> Imprimir Reporte por Rango de Fechas </a>
-                                    <form action="reporte_gastosFechas_c.php"  class="form-inline row" method="POST" name="formFechas" id="formFechas">
-                                        <div class="col-sm-3">
-                                        <label for="">Elegir CAJA CHICA</label>
-                                            <select style="width: 100%;font-size:12px ;" name="proyecto" id="select" class=" form-select" required >
-                                                <option value="" >Seleccione una opción : </option>
-                                                <?php
-                                                    $query = mysqli_query($conexion, "SELECT * from proyectos ORDER BY pro_nombre ASC;");
-                                                    $result = mysqli_num_rows($query);
-                                                    if ($result > 0) {
-                                                    while ($data = mysqli_fetch_array($query)) {
-                                                        echo '<option value="'.$data['pro_nombre'].'">'.$data['pro_nombre'].'</option>';
-                                                        $nombre = $data['p_descripcion'];
-                                                    }}
-                                                ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label for="">Fecha Inicio</label>
-                                            <input class="form-control form-control-sm" type="date" name="fecha_inicio" id="" required > 
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label for="">Fecha Final</label>
-                                            <input class="form-control form-control-sm" type="date" name="fecha_final" id="" required >
-
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <button type="submit" class="btn btn-danger btn-sm p-2  ">
-                                                <img src="img/PDF.svg" height="20px" width="20px" > Reporte Por Fechas
-                                            </button>
-                                        </div>
-                                        
-
-                                        
-                                            
-                                        
-
-                                        
-                                    
-                                        
-                                        
-                                       
-
-                                    </form>
-                                </div>
-                                </nav>
-
                             
-
                                 <div class="table table-responsive">
                             
                             <table class="table table-bordered ">
@@ -507,7 +457,7 @@
 
                         
                     </div>
-                </main>
+                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
