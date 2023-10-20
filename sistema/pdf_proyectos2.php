@@ -175,19 +175,29 @@ ob_start();
                     //$query = mysqli_query($conexion, "SELECT * FROM gastos
                     //ORDER BY id_gasto DESC;");
 
-                    $query = mysqli_query($conexion, "SELECT
-ROW_NUMBER() 
-OVER(ORDER BY fecha_i ) 
-row_num,
-id_ingresosC, 
-montoBs,
-montoU,
-origen,
-fecha_i,
-respaldo
-FROM ingresos_c2
-WHERE proyecto = '$namep'
-ORDER BY fecha_i ;");
+                    $query = mysqli_query($conexion, "SELECT 
+                    (@row_number:=@row_number + 1) AS row_num,
+                    id_ingresosC, 
+                    montoBs,
+                    montoU,
+                    origen,
+                    fecha_i,
+                    respaldo
+                FROM 
+                    (SELECT 
+                        id_ingresosC, 
+                        montoBs,
+                        montoU,
+                        origen,
+                        fecha_i,
+                        respaldo
+                    FROM 
+                        ingresos_c2
+                    WHERE 
+                        proyecto = '$namep'
+                    ORDER BY 
+                        fecha_i) AS subquery,
+                    (SELECT @row_number:=0) AS t;");
 
                 
 
@@ -303,21 +313,33 @@ echo "The current date and time are $DateAndTime.";
                                     //$query = mysqli_query($conexion, "SELECT * FROM gastos
                                     //ORDER BY id_gasto DESC;");
 
-                                    $query = mysqli_query($conexion, "SELECT
-ROW_NUMBER() 
-OVER(ORDER BY g_fechai ) 
-row_num,
-id_gastoC, 
-g_montoBs,
-g_montoU,
-g_detalleGasto,
-g_origenDinero,
-g_fechai,
-g_respaldo,
-contar
-FROM gastos_c2
-WHERE g_proyecto = '$namep'
-ORDER BY g_fechai ;");
+                                    $query = mysqli_query($conexion, "SELECT 
+                                    (@row_number:=@row_number + 1) AS row_num,
+                                    id_gastoC, 
+                                    g_montoBs,
+                                    g_montoU,
+                                    g_detalleGasto,
+                                    g_origenDinero,
+                                    g_fechai,
+                                    g_respaldo,
+                                    contar
+                                FROM 
+                                    (SELECT 
+                                        id_gastoC, 
+                                        g_montoBs,
+                                        g_montoU,
+                                        g_detalleGasto,
+                                        g_origenDinero,
+                                        g_fechai,
+                                        g_respaldo,
+                                        contar
+                                    FROM 
+                                        gastos_c2
+                                    WHERE 
+                                        g_proyecto = '$namep'
+                                    ORDER BY 
+                                        g_fechai) AS subquery,
+                                    (SELECT @row_number:=0) AS t;");
 
                                 
 
