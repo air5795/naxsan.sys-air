@@ -3,17 +3,17 @@
     session_start();
     include "../conexion.php";
 
-    $query = mysqli_query($conexion, "SELECT * FROM ingresos_c2");
+    $query = mysqli_query($conexion, "SELECT * FROM gastos_c2");
     $result = mysqli_num_rows($query);
     if ($result > 0) {
         while ($data = mysqli_fetch_array($query)) {
-             $num = $data['id_ingresosC'];
+             $num = $data['id_gastoC'];
              
         }}
 
-        $sql_tfila = mysqli_query($conexion, "SELECT COUNT(id_ingresosC) FROM ingresos_c2;");
+        $sql_tfila = mysqli_query($conexion, "SELECT COUNT(id_gastoC) FROM gastos_c2;");
         $result_f = mysqli_fetch_array($sql_tfila);
-        $total2 = $result_f['COUNT(id_ingresosC)'];
+        $total2 = $result_f['COUNT(id_gastoC)'];
         $total3 =  $total2 + 1;
 
 
@@ -21,20 +21,22 @@
 
 
         if (empty($_POST['proyecto'])  
-        || empty($_POST['monto_bs']) 
-        || empty($_POST['monto_dolares'])
-        || empty($_POST['origen'])
+        || empty($_POST['detalle']) 
+        || empty($_POST['monto_bs'])
+        || empty($_POST['monto_u'])
         || empty($_POST['fecha'])) {
-            $alert = '<p class="alert alert-danger "> Llenar los campos faltantes</p> ';
+            $alert = '<p class="alert alert-danger "> Llenar campos faltantes</p> ';
        } 
        else 
      {
             
             $proyecto = $_POST['proyecto'];
-            $Origen = $_POST['origen'];
+            $detalle = $_POST['detalle'];
             $monto_bs = $_POST['monto_bs'];
-            $monto_dolares = $_POST['monto_dolares'];
+            $monto_u = $_POST['monto_u'];
             $fecha = $_POST['fecha'];
+            $origen = $_POST['origen'];
+            $contar = $_POST['contar'];
             $respaldo = $_FILES['respaldo'];
             $num = $total2 +1;
 
@@ -48,7 +50,7 @@
              $imgProducto = 'nodisponible.png';
  
              if ($nombre_image != '') {
-                 $destino = 'img/cajaChica_c2/';
+                 $destino = 'img/cajaChica_c_g2/';
                  $img_nombre = 'respaldo'.$num.'_1_'.$fecha;
                  //$img_nombre = 'acta_'.$ubicacion.'-'.$fecha_ejecucion.date('H:m:s');
                  $imgActa = $img_nombre.'.jpg';
@@ -56,28 +58,26 @@
              }
             
 
-
-             
-
-             
-
-
-
-                    $query_insert = mysqli_query($conexion, "INSERT INTO ingresos_c2(
-                        proyecto,
-                        origen,
-                        montoBs,
-                        montoU,
-                        fecha_i,
-                        respaldo  
+                    $query_insert = mysqli_query($conexion, "INSERT INTO gastos_c2(
+                        g_proyecto,
+                        g_detalleGasto,
+                        g_montoBs,
+                        g_montoU,
+                        g_fechai,
+                        g_respaldo,
+                        g_origenDinero,
+                        contar  
                     )
                     VALUES(
                         '$proyecto',
-                        '$Origen',
+                        '$detalle',
                         '$monto_bs',
-                        '$monto_dolares',
+                        '$monto_u',
                         '$fecha',
-                        '$imgActa'
+                        '$imgActa',
+                        '$origen',
+                        '$contar'
+
                         
                     )");
 
@@ -86,11 +86,10 @@
                 if ($nombre_image != '' ) {
                     move_uploaded_file($url_temp,$src);
                     
-                    
                 
                 } 
                 $alert = '<p class="alert alert-success"> Guardado Correctamente </p> ';
-                header("Location: ingresos_c2.php");
+                header("Location: gastos_c2.php");
 
             }else{
                 $alert = '<p class="alert alert-danger "> El registro fallo </p> ';
@@ -112,7 +111,6 @@
     <head>
         <meta charset="utf-8" />
         <?php include "includes/scripts.php";?>
-        
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -131,51 +129,30 @@
                     <div class="container-fluid px-4">
                     <div class="container-fluid px-4 ">
                 
-                <h1 class="mt-4 col"><i class="fa-solid fa-cash-register"></i>  <strong>Registro  <span> CAJA CHICA NA<SPAN style="color:red">XS</SPAN>AN SUCURSAL (LA PAZ) </strong>  <span style="color:#9fd591;"> Ingresos  
-                <i class="fa-solid fa-square-caret-up"></i></span></h1>
-                  
-                        
+                <h1 class="mt-4 col"><i class="fa-solid fa-cash-register"></i>  <strong>Registro  <span> CAJA CHICA NA<SPAN style="color:red">XS</SPAN>AN SUCURSAL (LA PAZ) </strong><span style="color:#ff6363;"> Gastos  <i class="fa-solid fa-square-caret-down"></i></span></h1>
+              
                         <hr>
 
-                        
-                                                    
-                        
-
-                        
+  
                        <!-- contenido del sistema 2--> 
                         <!-- formulario de registro de usuarios-->
-
 
                         <div class="row">
                         
                         
-                        <div class="col">
-                        
-                        
+                        <div class="col-sm-4">
+
+                        <form action="gastos_c2.php" method="post" class="fields was-validated " enctype="multipart/form-data" novalidate >
 
 
 
-
-
-                        <form action="ingresos_c2.php" method="post" class="fields was-validated " enctype="multipart/form-data" novalidate >
-
-                        
-
-                        <div class="row " style="background-color: honeydew;">
+                        <div class="row" style="background-color: #fff0f0;">
                             
 
-                        
-
-                            
-
-                            
-
-                            <a class="btn alert alert-dark  disabled" role="button" aria-disabled="true">N° de registro: <?php echo $total3 ?> </a> 
-
-                            <div class="col-md-6">
-                                <div class=" mb-3 mb-md-0">
-                                <span for="inputFirstName">CAJA CHICA</span> 
-                                    <select style="width: 100%;font-size:12px ;" name="proyecto" id="select" class="form-control  select" required >
+                            <a class="btn alert alert-dark font-weight-bold  disabled" role="button" aria-disabled="true"> <strong> N° de registro:  <?php echo $total3 ?> </strong></a>
+                            <div class="col-sm-12">
+                            <span for="inputFirstName">Elegir CAJA-CHICA </span> 
+                            <select style="width: 100%;font-size:12px ;" name="proyecto" id="select" class="form-control  select" required >
                                         <option value="" >Seleccione una opción : </option>
                                         <?php
                                             $query = mysqli_query($conexion, "SELECT * from proyectos2 ORDER BY pro_nombre ASC;");
@@ -187,46 +164,63 @@
                                             }}
                                         ?>
                                     </select>
-                                    </div>
-
                             </div>
-
-                            <div class="col-md-6">
+                            <div class="col-sm-12">
                                 <div class=" mb-3 mb-md-0">
-                                    <span for="inputFirstName">Origen Dinero </span> 
-                                    <input class="form-control form-control-sm  " id="origen" name="origen" type="text"  required />
+                                    <span for="inputFirstName">Detalle de Gasto </span> 
+                                    <input  class="form-control form-control-sm  bg-opacity-10" name="detalle" type="text" value="" required  />
                                 </div>
                             </div>
+                           
 
-                            <div class="col-md-4">
+                            <div class="col-sm-6">
                                 <div class=" mb-3 mb-md-0">
                                     <span for="inputFirstName">Monto en Bs.</span> 
                                     <input class="form-control form-control-sm money" id="bs" name="monto_bs" type="number" step='0.001'  placeholder='0.00' oninput="calcular_a_dolar()" required/>
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-sm-6">
                                 <div class=" mb-3 mb-md-0">
                                     <span for="inputFirstName">Monto en $u$ </span> 
-                                    <input class="form-control form-control-sm money " id="dolar" name="monto_dolares" type="number" step='0.001'  placeholder='0.00' oninput="calcular_a_bs()" required />
+                                    <input class="form-control form-control-sm money " id="dolar" name="monto_u" type="number" step='0.001'  placeholder='0.00' oninput="calcular_a_bs()" required />
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-sm-4">
                                 <div class=" mb-3 mb-md-0">
                                     <span for="inputFirstName">Fecha </span> 
                                     <input class="form-control form-control-sm" name="fecha" type="date" required />
                                 </div>
                             </div>
 
+                            <div class="col-sm-8">
+                            <span for="inputFirstName">Contabilizar </span> 
+                            <select style="width: 100%;font-size:12px ;" name="contar" id="select" class="form-control  select" required >
+                                        <option value="" >Seleccione una opción : </option>
+                                        <option value="si" >SI </option>
+                                        <option value="no" >NO </option>
+                                        
+                                        
+                                    </select>
+                            </div>
+
+
                             
 
-                            <div class="col-md-8">
+                            
+
+                            <div class="col-sm-8">
                                 <div class=" mb-3 mb-md-0">
                                 <span for="inputFirstName">Respaldo </span> 
                                 <input type="file" class="form-control form-control-sm"  name="respaldo" id="files" >
                                 </div>
                             </div> 
+                            
+
+                             
+
+                            
 
                             
 
@@ -236,7 +230,7 @@
 
 
 
-                            <hr class="w-100">
+                            <hr class="">
                             <!-- selector--> 
 
                             
@@ -245,13 +239,13 @@
                             <div class="row">
                                 <div class="" role="alert" style=""> <?php echo isset ($alert) ? $alert :''; ?></div>
                                 
-                                <input type="submit" value="Registrar Ingreso" class="btn btn-success  border-0 " data-dismiss="alert" >
+                                <input type="submit" value="Registrar Gasto" class="btn btn-danger  border-0 " data-dismiss="alert" >
                                 
                             </div>
 
                             <hr>
 
-                            <div class="col-md-12">
+                            <div class="col-sm-12">
                                 <div class="" id="">
                                 <center> 
                                     
@@ -274,13 +268,13 @@
 
                         
 
-                        <div class="col">
+                        <div class="col-sm-8">
                         <?php
-                            $sql_suma_bs = mysqli_query($conexion, "SELECT SUM(g_montoBs) FROM gastos_c2;");
+                            $sql_suma_bs = mysqli_query($conexion, "SELECT SUM(g_montoBs) FROM gastos_c;");
                             $result_sum = mysqli_fetch_array($sql_suma_bs);
                             $total = $result_sum['SUM(g_montoBs)']; 
 
-                            $sql_suma_bs2 = mysqli_query($conexion, "SELECT SUM(montoBs) FROM ingresos_c2;");
+                            $sql_suma_bs2 = mysqli_query($conexion, "SELECT SUM(montoBs) FROM ingresos_c;");
                             $result_sum2 = mysqli_fetch_array($sql_suma_bs2);
                             $total2 = $result_sum2['SUM(montoBs)'];
 
@@ -294,18 +288,23 @@
                             <div class="">
 
                             
+
+                            
+
+                                
                             
                             <table >
-                            <table  id="tablas"  class="table table-bordered table-hover" style="font-size:11px ;"  >
+                            <table  id="tablas"  class="table table-bordered table-hover" style="font-size:11px ;" >
                                 <thead class="table-secondary">
                                     <tr class="">
                                         
                                         <th>N°</th>
                                         <th>DETALLE</th>
-                                        <th>Origen de Dinero</th>
+                                        <th width="20%">Detalle de Gasto</th>
                                         <th>Monto(Bs)</th>
-                                        <th>Fecha de Ingreso</th>
-                                        <th>Monto($)</th>
+                                        
+                                        <th>Fecha de Gasto</th>
+                                        
                                         
                                         
                                         <th>Acciones</th>    
@@ -314,20 +313,34 @@
                                     <?php
                     
                                     // rescatar datos DB 
-                                    $query = mysqli_query($conexion, "SELECT * FROM ingresos_c2
-                                    ORDER BY id_ingresosC DESC;");
+                                    //$query = mysqli_query($conexion, "SELECT * FROM gastos
+                                    //ORDER BY id_gasto DESC;");
+
+                                    $query = mysqli_query($conexion, "SELECT
+ROW_NUMBER() 
+OVER(ORDER BY id_gastoC ) 
+row_num,
+id_gastoC,
+g_proyecto, 
+g_detalleGasto,
+g_montoBs,
+g_montoU,
+g_fechai,
+g_respaldo
+FROM gastos_c2
+ORDER BY id_gastoC DESC;");
 
                                 
 
                                     $result = mysqli_num_rows($query);
                                     if ($result > 0) {
                                         while ($data = mysqli_fetch_array($query)) {
-                                            if ($data['respaldo'] != 'nodisponible.png' ) {
-                                                $image = 'img/cajaChica_c2/'.$data['respaldo'];
+                                            if ($data['g_respaldo'] != 'nodisponible.png' ) {
+                                                $image = 'img/cajaChica_c_g2/'.$data['g_respaldo'];
                                                 
 
                                             }else {
-                                                $image = 'img/'.$data['respaldo'];
+                                                $image = 'img/'.$data['g_respaldo'];
                                             }
                                             
                                             
@@ -336,18 +349,18 @@
 
                                     ?>
 
-<tr>
-                                <td><?php echo $data['id_ingresosC'] ?></td>
-                                <td><?php echo $data['proyecto'] ?></td>
-                                <td><?php echo $data['origen'] ?></td>
-                                <td class=" bg-success bg-opacity-10"><?php echo number_format($data['montoBs'],2,'.',',').' Bs' ?></td>
-                                
-                                <td><?php 
+                            <tr>
+                                <td><?php echo $data['row_num'] ?></td>
+                                <td width="20%"><?php echo $data['g_proyecto'] ?></td>
+                                <td width="30%"><?php echo $data['g_detalleGasto'] ?></td>
+                                <td class=" bg-success bg-opacity-10"><?php echo number_format($data['g_montoBs'],2,'.',',').' Bs' ?></td>
+                               
+                                <td width="15%"><?php 
                                     setlocale(LC_TIME, "spanish");
-                                    echo strftime('%e de %B %Y', strtotime($data['fecha_i']));
+                                    echo strftime('%e de %B %Y', strtotime($data['g_fechai']));
                                     ?>
                                 </td>
-                                <td class=" bg-success bg-opacity-10"><?php echo number_format($data['montoU'],2,'.',',').' $' ?></td>
+                                
                                 
                                 
                                 
@@ -359,15 +372,12 @@
 
                                 <div style="min-width: max-content;">
                                     
-                                    <a class="btn btn-success btn-sm gallery-item" id="<?php echo $image; ?> ">
+                                    <a class="btn btn-outline-success btn-sm gallery-item" id="<?php echo $image; ?> ">
                                     <i class="fa-solid fa-eye"></i> 
                                     </a>
                                 
-                                    
-
-                                    
-                                    <a data-bs-toggle="modal" data-bs-target="#exampleModali<?php echo $data['id_ingresosC']; ?> " class="btn btn-outline-danger btn-sm" href=""><i class="fa-solid fa-trash"></i> Eliminar </a>
-
+                                    <a data-bs-toggle="modal" data-bs-target="#exampleModali<?php echo $data['id_gastoC']; ?> " class="btn btn-outline-danger btn-sm" href=""><i class="fa-solid fa-trash"></i> </a>
+                                    <a data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $data['id_gastoC']; ?> " class="btn btn-outline-warning btn-sm" href="">Editar </a>       
                                     
                                 </div>
                                     
@@ -375,22 +385,50 @@
                                     
                                 </td>
                             </tr>
-
-                            <!-- Modal eliminar  -->
-                            <div class="modal fade " id="exampleModali<?php echo $data['id_ingresosC']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <!-- Modal editar  -->
+                            <div class="modal fade " id="exampleModal<?php echo $data['id_gastoC']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content  bg-opacity-80">
-                                            <form action="eliminar_ingresos_c2.php" method="post">
+                                            <form action="editar_gastos_c2.php" method="post">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Editar registro </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="card-header text-center " style="padding: 0; margin: 0;">
+                                            <input type="hidden" name="idGasto" value="<?php echo $data['id_gastoC']; ?>" >
+                                            
+                                            <input name="edetalle" class="form-control"  type="text" value=" <?php echo $data['g_detalleGasto'] ?> " >
+                                            <input name="emonto" class="form-control" type="text" value="<?php echo $data['g_montoBs']?> " >
+                                             
+                                            </div>
+                                                
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                            <input class="btn btn-warning" type="submit" value="Actualizar">
+                                        </div>
+
+                                        </form>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                            <!-- Modal eliminar  -->
+                            <div class="modal fade " id="exampleModali<?php echo $data['id_gastoC']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content  bg-opacity-80">
+                                            <form action="eliminar_gastos_c2.php" method="post">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Eliminar registro  </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="card-header text-center " style="padding: 0; margin: 0;">
-                                            <input type="hidden" name="idIngreso" value="<?php echo $data['id_ingresosC']; ?>" >
+                                            <input type="hidden" name="idGasto" value="<?php echo $data['id_gastoC']; ?>" >
                                             
-                                            <input name="ename" class="form-control" style="text-align: center;" type="text" value=" <?php echo $data['proyecto'] ?> " disabled>
-                                            <input name="ename" class="form-control" style="text-align: center;" type="text" value=" <?php echo $data['montoBs'].' Bs' ?> " disabled>
+                                            <input name="ename" class="form-control" style="text-align: center;" type="text" value=" <?php echo $data['g_detalleGasto'] ?> " disabled>
+                                            <input name="ename" class="form-control" style="text-align: center;" type="text" value=" <?php echo $data['g_montoBs'].' Bs' ?> " disabled>
                                              
                                             </div>
                                                 
@@ -468,12 +506,12 @@
             </div>
         </div>
 
-
+        
         <script>
         $(document).ready(function () {
             $('#tablas').DataTable({
                 order: [[0, 'desc']],
-                pageLength: 5,
+                pageLength: 8,
                 lengthMenu: [
                     [5, 10, 25,50,200, -1],
                     [5, 10, 25,50,200, 'All'],
@@ -484,6 +522,7 @@
             });
         });
 </script>
+
 
 <script>
     document.addEventListener("click",function(e){
@@ -547,21 +586,6 @@
         
 
     </script>
-
-<script type="text/javascript">
-            // In your Javascript (external .js resource or <script> tag)
-        $(document).ready(function() {
-            $('.select').select2({
-            placeholder: "Buscar en base de datos (Productos)",
-            allowClear: true , 
-            theme: "classic",
-            minimumInputLength: 1,
-            language: "es",
-            });
-            
-            
-        });
-    </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -570,6 +594,5 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-       
     </body>
 </html>
