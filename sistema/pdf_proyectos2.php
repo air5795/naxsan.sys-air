@@ -299,7 +299,7 @@ echo "The current date and time are $DateAndTime.";
                                         <th>N°</th>
                                         
                                         <th>Detalles</th>
-                                        <th>Origen Dinero</th>
+                                        
                                         <th>Fecha de Gasto</th> 
                                         <th>Monto(Bs)</th>
 
@@ -363,7 +363,7 @@ echo "The current date and time are $DateAndTime.";
                                 <td><?php echo $data['row_num'] ?></td>
                                 
                                 <td><?php echo $data['g_detalleGasto'] ?></td>
-                                <td><?php echo $data['g_origenDinero'] ?></td>
+                                
                                 <td>
                                     <?php 
                                     setlocale(LC_TIME, "spanish");
