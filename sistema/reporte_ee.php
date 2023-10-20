@@ -70,38 +70,67 @@ ob_start();
                     }}
 
                     // rescatar datos DB 
-                    $query = mysqli_query($conexion, "SELECT ROW_NUMBER() OVER( ORDER BY fecha_ejecucion) row_num,
-                                                                                                        id_exp,
-                                                                                                        fecha_ejecucion,
-                                                                                                        monto_bs,
-                                                                                                        monto_dolares,
-                                                                                                        nombre_contratante,
-                                                                                                        n_socio,
-                                                                                                        obj_contrato,
-                                                                                                        participa_aso,
-                                                                                                        profesional_resp,
-                                                                                                        image,
-                                                                                                        image2,
-                                                                                                        image3,
-                                                                                                        image4,
-                                                                                                        image5,
-                                                                                                        image6,
-                                                                                                        image7,
-                                                                                                        image8,
-                                                                                                        image9,
-                                                                                                        image10,
-                                                                                                        image11,
-                                                                                                        image12,
-                                                                                                        image13,
-                                                                                                        image14,
-                                                                                                        image15,
-                                                                                                        ubicacion
-                                                                                                        FROM
-                                                                                                            exp_general
-                                                                                                        WHERE
-                                                                                                            $sql
-                                                                                                        ORDER BY
-                                                                                                            fecha_ejecucion;");
+                    $query = mysqli_query($conexion, "SELECT 
+                    (@row_number:=@row_number + 1) AS row_num,
+                    id_exp,
+                    fecha_ejecucion,
+                    monto_bs,
+                    monto_dolares,
+                    nombre_contratante,
+                    n_socio,
+                    obj_contrato,
+                    participa_aso,
+                    profesional_resp,
+                    image,
+                    image2,
+                    image3,
+                    image4,
+                    image5,
+                    image6,
+                    image7,
+                    image8,
+                    image9,
+                    image10,
+                    image11,
+                    image12,
+                    image13,
+                    image14,
+                    image15,
+                    ubicacion
+                FROM 
+                    (SELECT 
+                        id_exp,
+                        fecha_ejecucion,
+                        monto_bs,
+                        monto_dolares,
+                        nombre_contratante,
+                        n_socio,
+                        obj_contrato,
+                        participa_aso,
+                        profesional_resp,
+                        image,
+                        image2,
+                        image3,
+                        image4,
+                        image5,
+                        image6,
+                        image7,
+                        image8,
+                        image9,
+                        image10,
+                        image11,
+                        image12,
+                        image13,
+                        image14,
+                        image15,
+                        ubicacion
+                    FROM 
+                        exp_general
+                    WHERE 
+                        $sql
+                    ORDER BY 
+                        fecha_ejecucion) AS subquery,
+                    (SELECT @row_number:=0) AS t;");
 
 
 
