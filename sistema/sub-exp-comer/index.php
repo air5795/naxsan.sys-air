@@ -24,7 +24,7 @@
         <link rel="shortcut icon" href="img/ICONOGRANDE2.png">
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SIS-PONCELET</title>
+        <title>NAXSAN</title>
         
     </head>
     <body class="sb-nav-fixed">
