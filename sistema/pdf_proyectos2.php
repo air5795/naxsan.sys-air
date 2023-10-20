@@ -37,7 +37,7 @@ ob_start();
 
 
 
-    <title>SISPONCELET</title>
+    <title>NAXSAN</title>
 
     <style>
             /** Define the margins of your page **/
