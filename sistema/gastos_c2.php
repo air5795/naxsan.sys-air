@@ -316,19 +316,17 @@
                                     //$query = mysqli_query($conexion, "SELECT * FROM gastos
                                     //ORDER BY id_gasto DESC;");
 
-                                    $query = mysqli_query($conexion, "SELECT
-ROW_NUMBER() 
-OVER(ORDER BY id_gastoC ) 
-row_num,
-id_gastoC,
-g_proyecto, 
-g_detalleGasto,
-g_montoBs,
-g_montoU,
-g_fechai,
-g_respaldo
-FROM gastos_c2
-ORDER BY id_gastoC DESC;");
+                                    $query = mysqli_query($conexion, "SELECT 
+                                    (@row_number:=@row_number + 1) AS row_num,
+                                    id_gastoC,
+                                    g_proyecto, 
+                                    g_detalleGasto,
+                                    g_montoBs,
+                                    g_montoU,
+                                    g_fechai,
+                                    g_respaldo
+                                FROM gastos_c2
+                                ORDER BY id_gastoC DESC");
 
                                 
 
