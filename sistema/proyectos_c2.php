@@ -378,7 +378,7 @@
                                     <!-- Modal pdf  -->
                             <div class="modal fade " id="exampleModalp<?php echo $idp; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
-                                        <div class="modal-content  bg-opacity-80">
+                                        <div style="background-color: #c7c5c6;" class="modal-content  bg-opacity-80">
                                             <form action="pdf_proyectos2.php" method="post">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">PDF: Reporte </h5>
