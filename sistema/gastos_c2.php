@@ -119,7 +119,7 @@
         
     </head>
     <body class="sb-nav-fixed">
-    <?php // include "includes/header.php";?>
+    <?php  include "includes/header.php";?>
     
 
         <!-- contenido del sistema-->
@@ -270,11 +270,11 @@
 
                         <div class="col-sm-8">
                         <?php
-                            $sql_suma_bs = mysqli_query($conexion, "SELECT SUM(g_montoBs) FROM gastos_c;");
+                            $sql_suma_bs = mysqli_query($conexion, "SELECT SUM(g_montoBs) FROM gastos_c2;");
                             $result_sum = mysqli_fetch_array($sql_suma_bs);
                             $total = $result_sum['SUM(g_montoBs)']; 
 
-                            $sql_suma_bs2 = mysqli_query($conexion, "SELECT SUM(montoBs) FROM ingresos_c;");
+                            $sql_suma_bs2 = mysqli_query($conexion, "SELECT SUM(montoBs) FROM ingresos_c2;");
                             $result_sum2 = mysqli_fetch_array($sql_suma_bs2);
                             $total2 = $result_sum2['SUM(montoBs)'];
 
