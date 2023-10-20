@@ -21,7 +21,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 
-        <link rel="shortcut icon" href="img/ICONOGRANDE2.png">
+        <link rel="shortcut icon" href="../img/ICONO.png">
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>NAXSAN</title>
@@ -102,6 +102,7 @@
             <div class="col-sm-2">
                     <a class="btn btn-outline-danger btn-sm w-100  " href="../reporte_eg.php" > <i class="bi bi-file-pdf-fill"></i> <br> Lista Exp. General   </a>
                   
+
             </div>
 
             <div class="col-sm-2">
