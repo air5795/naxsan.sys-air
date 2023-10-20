@@ -17,8 +17,9 @@ include "../conexion.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <link rel="shortcut icon" href="../img/ICONO.png">
 
-    <title>SISPONCELET</title>
+    <title>NAXSAN</title>
 
     <script src="js/jquery-3.6.1.js"></script>
     <link rel="stylesheet" href="css/jquery.dataTables.min.css">
@@ -40,7 +41,7 @@ include "../conexion.php";
                     <h1 class="mt-4"><i class="fa-solid fa-cart-shopping"></i> Listar proyectos Especificos Comercialiadora</h1>
                         
                         <ol class="breadcrumb mb-2 ">
-                            <li class="breadcrumb-item active">Poncelet / Proyectos Comercializadora</li> 
+                            <li class="breadcrumb-item active">Naxsan/ Proyectos Comercializadora</li> 
                         </ol>
 
                 <hr>
@@ -230,7 +231,7 @@ include "../conexion.php";
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; poncelet.bo@gmail.com @leiglesSoft</div>
+                    <div class="text-muted">Copyright &copy; @irsoft - 2023</div>
                     <div>
 
                     </div>
