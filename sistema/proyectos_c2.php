@@ -352,7 +352,7 @@
                                     
                                     <a data-bs-toggle="modal" data-bs-target="#exampleModali<?php echo $idp; ?> "  class="btn btn-danger btn-sm " href=""><i class="fa-solid fa-trash"></i>  </a>
                                     <a data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $idp; ?> " class="btn btn-warning btn-sm  " href=""><i class="fa-solid fa-pen"></i>   </a>
-                                    <a data-bs-toggle="modal" data-bs-target="#exampleModalp<?php echo $idp; ?> " class="btn btn-outline-danger  btn-sm  " href=""><img src="img/pdf.svg" height="20px" width="20px"> IMPRIMIR </a> 
+                                    <a data-bs-toggle="modal" data-bs-target="#exampleModalp<?php echo $idp; ?> " class="btn btn-outline-danger  btn-sm  " href=""><img src="img/pdf.png" height="20px" width="20px"> IMPRIMIR </a> 
 
                                     
                                 </div>

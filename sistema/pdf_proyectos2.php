@@ -289,7 +289,7 @@ echo "The current date and time are $DateAndTime.";
                     
                                            
                         <tr>
-                            <td colspan="5" style="font-size:10px; border-right-color: white; border-left-color: white; border-top-color:white;"> <STRONG style="font-size:13px;"> DETALLE GASTOS CAJA CHICA   </STRONG></td>
+                            <td colspan="4" style="font-size:10px; border-right-color: white; border-left-color: white; border-top-color:white;"> <STRONG style="font-size:13px;"> DETALLE GASTOS CAJA CHICA   </STRONG></td>
                         </tr>
                         
                      
@@ -390,7 +390,7 @@ echo "The current date and time are $DateAndTime.";
                     ?>
 
                     <tr class="">
-                        <td colspan="4" style="text-align: right; background-color: rgb(249 134 2 / 20%); color: #5c5c5c;">  TOTAL GASTOS</td>
+                        <td colspan="3" style="text-align: right; background-color: rgb(249 134 2 / 20%); color: #5c5c5c;">  TOTAL GASTOS</td>
                         <td colspan="1" style="background-color: orange color:white; font-size:20px;"> <?php echo number_format($total,2,'.',',').' Bs'?></td>
                     </tr>
                     
