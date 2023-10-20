@@ -115,11 +115,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SIS-NAXSAN</title>
+        <title>NAXSAN</title>
         
     </head>
     <body class="sb-nav-fixed">
-    <?php  include "includes/header.php";?>
+    <?php // include "includes/header.php";?>
     
 
         <!-- contenido del sistema-->
