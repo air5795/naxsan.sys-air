@@ -317,7 +317,9 @@
                                     //ORDER BY id_gasto DESC;");
 
                                     $query = mysqli_query($conexion, "SELECT 
-                                    (@row_number:=@row_number + 1) AS row_num,
+                                    (SELECT COUNT(*) 
+                                     FROM gastos_c2 AS sub 
+                                     WHERE sub.id_gastoC >= main.id_gastoC) AS row_num,
                                     id_gastoC,
                                     g_proyecto, 
                                     g_detalleGasto,
@@ -325,8 +327,11 @@
                                     g_montoU,
                                     g_fechai,
                                     g_respaldo
-                                FROM gastos_c2
-                                ORDER BY id_gastoC DESC");
+                                FROM 
+                                    gastos_c2 AS main
+                                ORDER BY 
+                                    id_gastoC DESC;
+                                ;");
 
                                 
 
