@@ -90,7 +90,7 @@ include "../conexion.php";
                         <img src="img/PDF.svg" height="20px" width="20px" > Lista de Experiencia Especifica
                     </button>
                     
-                    <a  href="rep_ImgEE.php" class="btn btn-outline-danger p-2 "> <img src="img/pdf.svg" height="20px" width="20px"> Actas Experiencia Especifica </a>
+                    <a  href="rep_ImgEE.php" class="btn btn-outline-danger p-2 "> <img src="img/pdf.png" height="20px" width="20px"> Actas Experiencia Especifica </a>
                     
                     <hr>
                 <table  style="font-size:11px ;" class=" table table-hover" id="datatable" class="display" >
