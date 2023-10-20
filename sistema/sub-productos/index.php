@@ -21,10 +21,10 @@
 
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 
-        <link rel="shortcut icon" href="img/ICONOGRANDE2.png">
+        <link rel="shortcut icon" href="../img/ICONO.png">
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SIS-PONCELET</title>
+        <title>NAXSAN</title>
         
     </head>
     <body class="sb-nav-fixed">
@@ -68,7 +68,7 @@
 
 
             <div class="col-sm-2">
-                <a class="btn btn-danger w-100" style="background-color: cadetblue;border:none;" href="http://localhost/poncelet-sis/sistema/cotizador/"><i class="bi bi-file-earmark-ruled"></i> Cotizador Poncelet </a>
+                <a class="btn btn-danger w-100" style="background-color: #ff5050;border:none;" href="../sub-cotizador/"><i class="bi bi-file-earmark-ruled"></i> Ir a Cotizaciones </a>
                 
             </div>
 
@@ -76,7 +76,7 @@
                 
                 <div class="text-center">
                     <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-outline-secondary boton w-100" data-bs-toggle="modal" data-bs-target="#modalproductos" id="botonCrear">
+                        <button type="button" class="btn btn-outline-danger  w-100" data-bs-toggle="modal" data-bs-target="#modalproductos" id="botonCrear">
                         <i class="fa-solid fa-plus"></i> Nuevo Producto
                         </button>
                         

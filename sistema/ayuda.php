@@ -75,31 +75,22 @@
         <!-- contenido del sistema-->
 
         <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                    <div class="container-fluid px-4 ">
-                
-                <h1 class="mt-4 col"><i class="fa-solid fa-sack-dollar"></i> <strong>Gestor de <span> CAJA CHICA NA<SPAN style="color:red">XS</SPAN>AN </strong>   </span></h1>
-                  
-                        
-                        <hr>
+            <div class="container px-4 ">
+            <h1 class="mt-4 col"><i class="fa-solid fa-sack-dollar"></i> <strong>Gestor de <span> CAJA CHICA NA<SPAN style="color:red">XS</SPAN>AN </strong>   </span></h1>
 
-                       <!-- contenido del sistema 2--> 
-                        <!-- formulario de registro de usuarios-->
+   
+                <hr>
+                <!-- contenido del sistema --> 
+                <div class="container text-center">
+                    <div class="row">
 
 
-                        <div class="row">
-                              
-                        <div class="col-md-4">
 
-                        <form action="proyectos_c.php" method="post" class="fields was-validated " enctype="multipart/form-data" novalidate >
+                        <div class="col-sm-6">
 
-                        
-                        
 
-                        <div class="row" style="background-color: #ffe8e8">
-                            
-
+                            <form action="proyectos_c.php" method="post" class="fields was-validated " enctype="multipart/form-data" novalidate >
+                            <div class="row" style="background-color: #ffe8e8">
                         <?php
                             $sql_suma_bs = mysqli_query($conexion, "SELECT SUM(g_montoBs) FROM gastos_c;");
                             $result_sum = mysqli_fetch_array($sql_suma_bs);
@@ -108,138 +99,48 @@
                             $sql_suma_bs2 = mysqli_query($conexion, "SELECT SUM(montoBs) FROM ingresos_c;");
                             $result_sum2 = mysqli_fetch_array($sql_suma_bs2);
                             $total2 = $result_sum2['SUM(montoBs)'];
-
-                            
                             
                             $saldo = $total2 - $total;
 
-                            
-
                         ?>
-
-                        
-
-                            
-
-                           
-
-                            
-
-                        
                             <a class="btn alert alert-dark font-weight-bold  disabled" role="button" aria-disabled="true"> <strong> N° de registro:  <?php echo $total3 ?> </strong></a>
-                            <div class="col-md-12">
+                            <div class="col-sm-12">
                                 <div class=" mb-3 mb-md-0">
                                     <span for="inputFirstName">IDENTIFICADOR (NOMBRE, FECHA)  </span> 
                                     <input  class="form-control form-control-sm  bg-opacity-10" name="nombre_proyecto" type="text" value="" required  />
                                 </div>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-sm-3">
                                 <div class=" mb-3 mb-md-0">
                                     <span for="inputFirstName">Color  </span> 
                                     <input  class="form-control form-control-sm  bg-opacity-10" name="color" type="color" value="#ffffff" required  />
                                 </div>
                             </div>
-
-                           
-                           
-
                             
-
-                            
-                        </div>
-
-
-
+                            </div>
 
                             <hr >
                             <!-- selector--> 
-
-                            
-                            
-
                             <div class="row">
                                 <div class="" role="alert" style=""> <?php echo isset ($alert) ? $alert :''; ?></div>
-                                
                                 <input type="submit" value="Registrar Proyecto" class="btn btn-warning  border-0  " data-dismiss="alert" >
-                                
-                                
+                            </div>
+                            </form>
+
+
+
                             </div>
 
-                            
-                            
-                            
-                                    
 
 
-                            
-                        </form>
 
-                        </div>
 
-                        
 
-                        <div class="col">
-                       
-                            <div class="">
+                        <div class="col-sm-6">
 
-                            <nav class="bg-light">
-                                <div class="container" style="BACKGROUND-COLOR: #e1e1e1;">
-                                    <a class="navbar-brand text-black"> <i class="fa-solid fa-print"></i> Imprimir Reporte por Rango de Fechas </a>
-                                    <form action="reporte_gastosFechas_c.php"  class="form-inline row" method="POST" name="formFechas" id="formFechas">
-                                        <div class="col-sm-3">
-                                        <label for="">Elegir CAJA CHICA</label>
-                                            <select style="width: 100%;font-size:12px ;" name="proyecto" id="select" class=" form-select" required >
-                                                <option value="" >Seleccione una opción : </option>
-                                                <?php
-                                                    $query = mysqli_query($conexion, "SELECT * from proyectos ORDER BY pro_nombre ASC;");
-                                                    $result = mysqli_num_rows($query);
-                                                    if ($result > 0) {
-                                                    while ($data = mysqli_fetch_array($query)) {
-                                                        echo '<option value="'.$data['pro_nombre'].'">'.$data['pro_nombre'].'</option>';
-                                                        $nombre = $data['p_descripcion'];
-                                                    }}
-                                                ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label for="">Fecha Inicio</label>
-                                            <input class="form-control form-control-sm" type="date" name="fecha_inicio" id="" required > 
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <label for="">Fecha Final</label>
-                                            <input class="form-control form-control-sm" type="date" name="fecha_final" id="" required >
-
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <button type="submit" class="btn btn-danger btn-sm p-2  ">
-                                                <img src="img/PDF.svg" height="20px" width="20px" > Reporte Por Fechas
-                                            </button>
-                                        </div>
-                                        
-
-                                        
-                                            
-                                        
-
-                                        
-                                    
-                                        
-                                        
-                                       
-
-                                    </form>
-                                </div>
-                                </nav>
-
-                            
-
-                                <div class="table table-responsive">
-                            
-                            <table class="table table-bordered ">
-
-                            
-                            <table class="table" id="tablas">
+                        <div class="table-responsive">
+                        <table class="table" id="tablas">
                                 
                                 <thead class="table-secondary ">
                                     <tr class="">
@@ -466,52 +367,22 @@
                                     
                             </table>
 
-                            </div>
+                        </div>
                             
-
-                            </div>
                         </div>
-
-
-
-
-
-
-
+                            
                         </div>
-
-
-
-
                         </div>
-                        <!-- Modal para  ver imagenes -->
-                <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered " > 
-                    <div class="modal-content modal-fullscreen ">
-                    <div class="modal-header">
-                        <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" >
-                        <img src="img/actas/acta_103_1_2021-02-22.jpg" class="modal-img" alt="modal img">
-                    </div>
-                    
-                    </div>
-                </div>
-                </div>
-
-
-
-                    
-                        
 
                         
                     </div>
-                </main>
+                
+
+                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; poncelet.bo@gmail.com @leiglesSoft</div>
+                            <div class="text-muted">Copyright &copy; @irsoft - 2023</div>
                             <div>
                                 
                             </div>
@@ -519,7 +390,7 @@
                     </div>
                 </footer>
             </div>
-        </div>
+        
 
         
 
