@@ -76,6 +76,10 @@
             $usuario =  '<span style="font-size:12px;background-color:#d1d1d1;text-align: center;color:#4e4e4e;border: 1px solid #2a2a2a;" class="btn btn-info w-100 "><i class="bi bi-person-circle"></i> Nicol</span>';
         }elseif ($fila["usuario_id"] == 28) {
             $usuario =  '<span style="font-size:12px;background-color:#d1d1d1;text-align: center;color:#4e4e4e;border: 1px solid #2a2a2a;" class="btn btn-info w-100 "><i class="bi bi-person-circle"></i> Mavel</span>';
+        }elseif ($fila["usuario_id"] == 34) {
+            $usuario =  '<span style="font-size:12px;background-color:#d1d1d1;text-align: center;color:#4e4e4e;border: 1px solid #2a2a2a;" class="btn btn-info w-100 "><i class="bi bi-person-circle"></i> Deyci</span>';
+        }elseif ($fila["usuario_id"] == 35) {
+            $usuario =  '<span style="font-size:12px;background-color:#d1d1d1;text-align: center;color:#4e4e4e;border: 1px solid #2a2a2a;" class="btn btn-info w-100 "><i class="bi bi-person-circle"></i> Lucia</span>';
         }else{
             $usuario =  '<span style="font-size:12px;background-color:#d1d1d1;text-align: center;color:#4e4e4e;border: 1px solid #2a2a2a;" class="btn btn-info w-100 "><i class="bi bi-person-circle"></i> otro</span>';
         }
