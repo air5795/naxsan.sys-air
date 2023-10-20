@@ -71,6 +71,18 @@
 							$user4 = '';
 						}
 
+						if ($invoiceDetails['id_usuario'] == 'Lucia Condori Calle') {
+							$user5 = '<span style="font-size:12px;background-color:#e4dcff;text-align: left; " class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia Condori  </span>'.'<br/>';
+						} else {
+							$user5 = '';
+						}
+
+						if ($invoiceDetails['id_usuario'] == 'Denis Daniel Arispe Ponce') {
+							$user6 = '<span style="font-size:12px;background-color:#b1dcff;text-align: left; " class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia Condori  </span>'.'<br/>';
+						} else {
+							$user6 = '';
+						}
+
   
 					  $data[] = array(
 						  'id_cotizacion' => $invoiceDetails["id_cotizacion"],
@@ -78,7 +90,7 @@
 						  'cliente_nombre' => $invoiceDetails["cliente_nombre"],
 						  'nota' => $invoiceDetails["nota"],
 						  'total_antes_impuestos' => number_format($invoiceDetails["total_antes_impuestos"], 2, '.', ',') . ' Bs',
-						  'id_usuario' => $user.$user2.$user3.$user4,
+						  'id_usuario' => $user.$user2.$user3.$user4.$user5.$user6,
 						  'print_link' => $printLink,
 						  'edit_link' => $editLink,
 						  'delete_link' => $deleteLink
