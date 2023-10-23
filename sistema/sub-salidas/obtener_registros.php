@@ -38,7 +38,7 @@ session_start();
     foreach($resultado as $fila){
 
         if ($fila['personal'] == 'Jazmin Velasco Diaz') {
-            $personal =  '<span class="btn btn-sm btn-outline-warning w-100" style="text-align:left;font-size:14px" ><i class="bi bi-person-fill"></i> Jazmin Velasco Diaz  </span>'.'<br/>';
+            $personal =  '<span style="font-size:12px;background-color:#fbe9f4;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Jazmin Velasco   </span>'.'<br/>';
         }else {
             $personal = '';
         }
@@ -51,7 +51,7 @@ session_start();
         
 
         if ($fila['personal'] == 'Alejandro Iglesias Raldes') {
-            $personal3 =  '<span class="btn btn-sm btn-outline-success w-100" style="text-align:left;font-size:14px" ><i class="bi bi-person-fill"></i> Alejandro Iglesias Raldes  </span>'.'<br/>';
+            $personal3 =  '<span style="font-size:12px;background-color:#e9ffca;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Alejandro Iglesias  </span>'.'<br/>';
         }else {
             $personal3 = '';
         }
@@ -68,6 +68,29 @@ session_start();
             $personal5 = '';
         }
 
+        if ($fila['personal'] == 'Deyci Eveling Colque Pacha') {
+            $personal6 = '<span style="font-size:12px;background-color:#cafbff;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Deyci Eveling Colque Pacha </span>'.'<br/>';
+        } else {
+            $personal6 = '';
+        }
+
+        if ($fila['personal'] == 'Lucia Condori Calle') {
+            $personal7 = '<span style="font-size:12px;background-color:#e4dcff;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia Condori Calle </span>'.'<br/>';
+        } else {
+            $personal7 = '';
+        }
+
+        if ($fila['personal'] == 'Cristian Cordero Iglesias ') {
+            $personal9 = '<span style="font-size:12px;background-color:#dcffeb;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Cristian Cordero Iglesias </span>'.'<br/>';
+        } else {
+            $personal9 = '';
+        }
+
+        
+
+
+
+
         //fecha de presentacion
         setlocale(LC_TIME, "spanish");
         $fecha =  strftime('%e de %B %Y', strtotime($fila['fecha']));
@@ -79,7 +102,7 @@ session_start();
         
         $sub_array = array();
         $sub_array[] = $fila["id_salida"];
-        $sub_array[] = $personal.$personal2.$personal3.$personal4.$personal5; 
+        $sub_array[] = $personal.$personal2.$personal3.$personal4.$personal5.$personal6.$personal7.$personal9; 
         $sub_array[] = $fecha;
         $sub_array[] = $fila["hora"];
         $sub_array[] = $fila["lugar"];

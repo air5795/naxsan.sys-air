@@ -3,6 +3,8 @@
     session_start();
     include "../../conexion.php";
 
+
+
 ?>
 
 
@@ -274,11 +276,11 @@
             
         </div>
 
-        <button style="background-color: blue;border: blue 1px solid;" type="" class="btn btn-primary"> </button> Edwin Pinto
+        <!-- <button style="background-color: blue;border: blue 1px solid;" type="" class="btn btn-primary"> </button> Edwin Pinto
         <button type="" class="btn btn-secondary"> </button> Nicol Erquicia
         <button type="" class="btn btn-success"></button> Alejandro Iglesias
         <button type="" class="btn btn-danger"></button> Mavel Condori
-        <button type="" class="btn btn-warning"></button> Jazmin Velasquez
+        <button type="" class="btn btn-warning"></button> Jazmin Velasquez -->
         
         <hr style="background-color: red;">
 
@@ -334,7 +336,7 @@
                     <div class="col-sm-12">
 
                             <label for="">Elegir Personal</label>
-                                <select style="width: 100%;font-size:12px ; border-radius: 25px;border: 2px solid gray;" name="personal" id="personal" class=" form-select" required >
+                                <!-- <select style="width: 100%;font-size:12px ; border-radius: 25px;border: 2px solid gray;" name="personal" id="personal" class=" form-select" required >
                                 <option value="">Escoje una Opción </option>
                                 <option value="Jazmin Velasco Diaz">Jazmin Velasco Diaz </option>
                                 <option value="Mavel Condori Flores">Mavel Condori Flores</option>
@@ -343,7 +345,28 @@
                                 <option value="Edwin Mario Pinto Ramirez">Edwin Mario Pinto Ramirez </option>
                                                             
 
-                            </select>
+                            </select> -->
+                            <select style="width: 100%; font-size: 12px; border-radius: 25px; border: 2px solid gray;" name="personal" id="personal" class="form-select" required>
+                            <option value="">Escoje una Opción</option>
+
+                            <?php
+
+                                // Consultar los nombres desde la tabla 'usuario'
+                                $sql = "SELECT nombre FROM usuario where estatus = '1'";
+                                $result = $conexion->query($sql);
+                            // Generar opciones dinámicamente desde la base de datos
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo '<option value="' . $row["nombre"] . '">' . $row["nombre"] . '</option>';
+                                }
+                            } else {
+                                echo "0 resultados encontrados";
+                            }
+
+                            
+                            ?>
+
+                        </select>
 
                         </div>
 
