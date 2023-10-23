@@ -125,28 +125,22 @@ $DateAndTime = date('d-m-Y ');
                     <tr>
                         <td style="font-size:15px; border-right-color: white; border-left-color: white; border-top-color:white; text-align:left"  colspan="5" > 
                         <STRONG>  INFORME DE : 
-                            <?php
-                                
-                            
-                                if ($personal == 'jazmin') {
-                                    $p = 'Jazmin Velasco Diaz';
-                                } else if ($personal == 'mavel') {
-                                    $p = 'Mavel Condori Flores';
-                                } else if ($personal == 'nicol') {
-                                    $p = 'Mariana Nicol Erquicia Camacho';
-                                }  else if ($personal == 'ale') {
-                                    $p = 'Alejandro Iglesias Raldes ';
-                                }  else if ($personal == 'edwin') {
-                                    $p = 'Edwin Pinto Ramirez';
-                                } else if ($personal == 'Eveling') {
-                                    $p = 'Deyci Eveling Colque Pacha';
-                                }else if ($personal == 'lucia') {
-                                    $p = 'Lucia Condori Calle';
-                                }
-                                 
+                        <?php
+                            $personalArray = [
+                                'jazmin' => 'Jazmin Velasco Diaz',
+                                'mavel' => 'Mavel Condori Flores',
+                                'nicol' => 'Mariana Nicol Erquicia Camacho',
+                                'ale' => 'Alejandro Iglesias Raldes',
+                                'edwin' => 'Edwin Pinto Ramirez',
+                                'eveling' => 'Deyci Eveling Colque Pacha',
+                                'lucia' => 'Lucia Condori Calle'
+                            ];
 
-                                echo $p; 
-                            ?> 
+                            $p = isset($personalArray[$personal]) ? $personalArray[$personal] : 'Valor por defecto';
+
+                            echo $p;
+                            ?>
+
                         </STRONG></td> 
                     </tr>
                     <tr style="background-color:#d7d7d7 ;font-size:10px;">
