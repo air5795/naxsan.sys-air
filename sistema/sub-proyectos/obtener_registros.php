@@ -36,7 +36,7 @@
         if ($fila['jazmin'] == '') {
             $jazmin =  '';
         }else {
-            $jazmin =  '<span style="font-size:12px;background-color:#fff5ca;text-align: left;" class="btn btn-info btn-sm w-100"><i class="bi bi-person-circle"></i> Jazmin Velasco </span>'.'<br/>'.$fila["jazmin"].'<br/>';
+            $jazmin =  '<span style="font-size:12px;background-color:#fbe9f4;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Jazmin Velasco   </span>'.'<br/>'.$fila["jazmin"].'<br/>';
         }
 
         if ($fila['mavel'] == '') {
@@ -54,13 +54,19 @@
         if ($fila['ale'] == '') {
             $ale =  '';
         }else {
-            $ale =  '<span style="font-size:12px;background-color:#fff5ca;text-align: left;" class="btn btn-info btn-sm w-100"><i class="bi bi-person-circle"></i> Alejandro Iglesias </span>'.'<br/>'.$fila["ale"].'<br/>';
+            $ale =  '<span style="font-size:12px;background-color:#e9ffca;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Alejandro Iglesias  </span>'.'<br/>'.$fila["ale"].'<br/>';
         }
 
         if ($fila['eveling'] == '') {
             $eveling =  '';
         }else {
-            $eveling =  '<span style="font-size:12px;background-color:#fff5ca;text-align: left;" class="btn btn-info btn-sm w-100"><i class="bi bi-person-circle"></i> Eveling Colque </span>'.'<br/>'.$fila["eveling"].'<br/>';
+            $eveling =  '<span style="font-size:12px;background-color:#cafbff;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Deyci Eveling Colque Pacha </span>'.'<br/>'.$fila["eveling"].'<br/>';
+        }
+
+        if ($fila['lucia'] == '') {
+            $lucia =  '';
+        }else {
+            $lucia =  '<span style="font-size:12px;background-color:#e4dcff;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia Condori Calle </span>'.'<br/>'.$fila["lucia"].'<br/>';
         }
 
         if ($fila['num_tramite'] == '') {
@@ -112,7 +118,7 @@
         }
 
         if ($fila['encargado'] == 'ale') {
-            $encargado2 = '<span style="font-size:12px;background-color:#cafbff;text-align: left;" class="btn btn-info btn-sm w-100"><i class="bi bi-pin-fill"></i> Alejandro  </span>'.'<br/>';
+            $encargado2 = '<span style="font-size:12px;background-color:#e9ffca;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Alejandro  </span>'.'<br/>';
         } else {
             $encargado2 = '';
         }
@@ -125,16 +131,22 @@
 
         
         if ($fila['encargado'] == 'jazmin') {
-            $encargado4 = '<span style="font-size:12px;background-color:#cafbff;text-align: left;" class="btn btn-info btn-sm w-100"><i class="bi bi-pin-fill"></i> Jazmin   </span>'.'<br/>';
+            $encargado4 = '<span style="font-size:12px;background-color:#fbe9f4;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Jazmin   </span>'.'<br/>';
         } else {
             $encargado4 = '';
         }
 
         
         if ($fila['encargado'] == 'eveling') {
-            $encargado5 = '<span style="font-size:12px;background-color:#cafbff;text-align: left;" class="btn btn-info btn-sm w-100"><i class="bi bi-pin-fill"></i> Eveling Colque </span>'.'<br/>';
+            $encargado5 = '<span style="font-size:12px;background-color:#cafbff;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Eveling </span>'.'<br/>';
         } else {
             $encargado5 = '';
+        }
+
+        if ($fila['encargado'] == 'lucia') {
+            $encargado6 = '<span style="font-size:12px;background-color:#e4dcff;text-align: left; color:#5a5a5a;" class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia  </span>'.'<br/>';
+        } else {
+            $encargado6 = '';
         }
         
 
@@ -172,8 +184,8 @@
         
         $sub_array[] = $estado;
         
-        $sub_array[] = $encargado1.$encargado2.$encargado3.$encargado4.$encargado5;
-        $sub_array[] =  $jazmin.$mavel.$nicol.$ale.$eveling;
+        $sub_array[] = $encargado1.$encargado2.$encargado3.$encargado4.$encargado5.$encargado6;
+        $sub_array[] =  $jazmin.$mavel.$nicol.$ale.$eveling.$lucia;
         $sub_array[] = '<button type="button" name="editar" id="'.$fila["id_pro"].'" class="btn btn-warning btn-sm boton-w  editar" style="background-color: #fbe806;color: #505050; color:#767676;"><i class="fa-solid fa-pencil"></i> </button>';
         $sub_array[] = '<button type="button" name="borrar" id="'.$fila["id_pro"].'" class="btn btn-danger btn-sm boton-w borrar" style="background-color: #ff5757;color: #505050; color:white;"><i class="fa-solid fa-trash-can"></i> </button>';
         $datos[] = $sub_array;

@@ -25,10 +25,10 @@
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
         
 
-        <link rel="shortcut icon" href="img/ICONOGRANDE2.png">
+        <link rel="shortcut icon" href="../img/ICONO.png">
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SIS-PONCELET</title>
+        <title>NAXSAN</title>
         
     </head>
     <body class="sb-nav-fixed">
@@ -86,8 +86,8 @@
             <p></p>
 
             
-            <div class="col-sm-2">
-                <a class="btn btn-secondary w-100 small disabled" href=""> <strong>  <?php echo $n_proyectos; ?> </strong> <span style="font-size: small;"> PROYECTOS REALIZADOS </span> </a>
+            <div class="col-sm-2" style="padding: 2px;">
+                <a class="btn btn-secondary w-100 small " href=""> <strong> <div style="background-color: #373737;border-radius: 25px;opacity: 75%;">  <?php echo $n_proyectos; ?> </div> </strong> <span style="font-size: small;"> <i class="bi bi-file-earmark-text"></i> PROYECTOS REALIZADOS </span> </a>
             
                 
             </div>
@@ -96,35 +96,31 @@
 
             
 
-            <div class="col-sm-2">
-                <a class="btn btn-secondary w-100 small  disabled" href=""> <strong>  <?php echo $n_cotizacion; ?> </strong> <span style="font-size: small;">  COTIZACIONES REALIZADAS </span> </a>
+           
+
+            <div class="col-sm-3" style="padding: 2px;">
+                <a class="btn btn-success w-100  " href=""> <strong><div style="background-color: #1b3f21;border-radius: 25px;opacity: 75%;">   <?php echo $n_adjudicados; ?> </div></strong> <span style="font-size: small"> <i class="bi bi-check-circle"></i>   ADJUDICADOS </span></a>
             
                 
             </div>
 
-            <div class="col-sm-2">
-                <a class="btn btn-success w-100  disabled" href=""> <strong>  <?php echo $n_adjudicados; ?> </strong> <span style="font-size: small">   ADJUDICADOS </span></a>
-            
-                
-            </div>
-
             
 
 
-            <div class="col-sm-2">
-                <a class="btn btn-primary w-100  disabled" href=""> <strong>  <?php echo $n_adjudicados2; ?> </strong> <span style="font-size: small">  PROYECTOS PAGADOS </span></a>
+            <div class="col-sm-3" style="padding: 2px;">
+                <a class="btn btn-success w-100  " href="" style=" background-color: #1d8700;"> <strong> <div style="background-color: #1b3f21;border-radius: 25px;opacity: 75%;">  <?php echo $n_adjudicados2; ?> </div> </strong> <span style="font-size: small"> <i class="bi bi-wallet2"></i>  PROYECTOS PAGADOS </span></a>
             
   
             </div>
 
-            <div class="col-sm-2">
-                <a class="btn btn-danger w-100  disabled" href=""> <strong>  <?php echo $n_adjudicados3; ?> </strong> <span style="font-size: small">  PROYECTOS NO ADJUDICADOS </span></a>
+            <div class="col-sm-2" style="padding: 2px;">
+                <a class="btn btn-danger w-100  " href=""> <strong> <div style="background-color: #373737;border-radius: 25px;opacity: 75%;">  <?php echo $n_adjudicados3; ?> </div> </strong> <span style="font-size: small"> <i class="bi bi-exclamation-circle"></i>  NO ADJUDICADOS </span></a>
             
   
             </div>
 
-            <div class="col-sm-2">
-                <a class="btn btn-warning w-100  disabled" href=""> <strong>  <?php echo $n_adjudicados4; ?> </strong> <span style="font-size: small">  PROYECTOS EN PROCESO </span></a>
+            <div class="col-sm-2" style="padding: 2px;">
+                <a class="btn btn-warning w-100  " href=""> <strong> <div style="background-color: #a9a9a9;border-radius: 25px;opacity: 75%;">  <?php echo $n_adjudicados4; ?> </div> </strong> <span style="font-size: small">  <i class="bi bi-exclamation-triangle"></i>  EN PROCESO </span></a>
             
   
             </div>
@@ -158,6 +154,7 @@
                     <option value="ale">Alejandro Iglesias Raldes </option>
                     <option value="nicol">Mariana Nicol Erquicia Camacho </option>
                     <option value="eveling">Deyci Eveling Colque Pacha </option>
+                    <option value="lucia">Lucia Condori Calle </option>
                                                 
 
                 </select>
@@ -200,6 +197,7 @@
                     <option value="ale">Alejandro Iglesias Raldes </option>
                     <option value="nicol">Mariana Nicol Erquicia Camacho </option>
                     <option value="eveling">Deyci Eveling Colque Pacha </option>
+                    <option value="lucia">Lucia Condori Calle </option>
                                                 
 
                 </select>
@@ -236,6 +234,7 @@
                     <option value="ale">Alejandro Iglesias Raldes </option>
                     <option value="nicol">Mariana Nicol Erquicia Camacho </option>
                     <option value="eveling">Deyci Eveling Colque Pacha</option>
+                    <option value="lucia">Lucia Condori Calle </option>
                                                 
 
                 </select>
@@ -337,15 +336,14 @@
 
 
         <div class="row">
-            <div class="col-sm-8">
+        <div class="col-sm-8 d-none d-sm-block">
+    <button type="" class="btn btn-secondary"></button> <span style="font-size: small;"> Total Proyectos </span> &nbsp;&nbsp;&nbsp;
+    <button type="" class="btn btn-success"></button>   <span style="font-size: small;"> Adjudicados </span>&nbsp;&nbsp;&nbsp;
+    <button type="" class="btn btn-danger"></button>  <span style="font-size: small;"> No Adjudicados </span>&nbsp;&nbsp;&nbsp;
+    <button type="" class="btn btn-warning"></button>  <span style="font-size: small;"> Proyecto En Proceso</span> &nbsp;&nbsp;&nbsp;
+    <button type="" class="btn btn-success"></button> <span style="font-size: small;"> Proyectos Pagados</span> &nbsp;&nbsp;&nbsp;
+</div>
 
-                <button type="" class="btn btn-secondary"> </button> <span style="font-size: small;"> Total Proyectos </span> &nbsp;&nbsp;&nbsp;
-                <button type="" class="btn btn-success"></button>   <span style="font-size: small;"> Adjudicados </span>&nbsp;&nbsp;&nbsp;
-                <button type="" class="btn btn-danger"></button>  <span style="font-size: small;"> No Adjudicados </span>&nbsp;&nbsp;&nbsp;
-                <button type="" class="btn btn-warning"></button>  <span style="font-size: small;"> Proyecto En Proceso</span> &nbsp;&nbsp;&nbsp;
-                <button style="background-color: #61a1fe;border: blue 1px solid;" type="" class="btn btn-primary"> </button> <span style="font-size: small;"> Proyectos Pagados</span> &nbsp;&nbsp;&nbsp;
-
-            </div>
             
 
             <div class="col-sm-4">
@@ -566,6 +564,7 @@
                                                 <option value="ale">Alejandro Iglesias Raldes </option>
                                                 <option value="nicol">Mariana Nicol Erquicia Camacho </option>
                                                 <option value="eveling">Deyci Eveling Colque Pacha </option>
+                                                <option value="lucia">Lucia Condori Calle </option>
                                 </select>
                         </div>
 
@@ -577,17 +576,17 @@
 
                         
 
-                        <div class="col-6">
+                         <div class="col-6">
                             <span for="inputFirstName">Mavel </span>
-                            <input class="form-control form-control-sm  bg-opacity-10" id="mavel" name="mavel" type="text" value=""  />
+                            <input class="form-control form-control-sm  bg-opacity-10" id="mavel" name="mavel" type="text" value="" style="display: none;"  />
                         </div>
 
                         
 
                         <div class="col-6">
                             <span for="inputFirstName">Nicol </span>
-                            <input class="form-control form-control-sm  bg-opacity-10" id="nicol" name="nicol" type="text" value=""  />
-                        </div>
+                            <input class="form-control form-control-sm  bg-opacity-10" id="nicol" name="nicol" type="text" value="" style="display: none;" />
+                        </div> 
 
                         
 
@@ -601,6 +600,11 @@
                         <div class="col-6">
                             <span for="inputFirstName">Eveling</span>
                             <input class="form-control form-control-sm  bg-opacity-10" id="eveling" name="eveling" type="text" value=""  />
+                        </div>
+
+                        <div class="col-6">
+                            <span for="inputFirstName">Lucia</span>
+                            <input class="form-control form-control-sm  bg-opacity-10" id="lucia" name="lucia" type="text" value=""  />
                         </div>
 
                         <br>
@@ -807,6 +811,7 @@
             var nicol = $('#nicol').val();
             var ale = $('#ale').val();
             var eveling = $('#eveling').val();
+            var lucia = $('#lucia').val();
             	
 		    if(nombre != '' && ubicacion != '' && tipo != '' && fecha != '' && tipo2 != '' && estado != '')
                 {
@@ -874,6 +879,7 @@
                         $('#jazmin').val(data.jazmin);
                         $('#nicol').val(data.nicol);
                         $('#eveling').val(data.eveling);
+                        $('#lucia').val(data.lucia);
                         $('.modal-title').text("Editar Proyecto");
                         $('#id_pro').val(id_pro);
                     

@@ -138,6 +138,10 @@ $DateAndTime = date('d-m-Y ');
                                     $p = 'Alejandro Iglesias Raldes ';
                                 }  else if ($personal == 'edwin') {
                                     $p = 'Edwin Pinto Ramirez';
+                                } else if ($personal == 'Eveling') {
+                                    $p = 'Deyci Eveling Colque Pacha';
+                                }else if ($personal == 'lucia') {
+                                    $p = 'Lucia Condori Calle';
                                 }
                                  
 
