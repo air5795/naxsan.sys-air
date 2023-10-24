@@ -115,7 +115,7 @@ $DateAndTime = date('d-m-Y ');
                         <tr>
                             <td colspan="11" style="background-color:white;text-align: right; color:#5c5c5c; border:solid white ">
                             <?php setlocale(LC_TIME, "spanish");
-                                echo '<p style="color: coral; font-size:10px;text-align:right;opacity: 0.5;"> @irsoft-SYS-PONCELET</p>';
+                                echo '<p style="color: coral; font-size:10px;text-align:right;opacity: 0.5;"> @irsoft-SYS-NAXSAN</p>';
                                 ?>
                             </td>
                         </tr>
