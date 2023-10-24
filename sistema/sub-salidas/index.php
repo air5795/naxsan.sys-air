@@ -23,10 +23,10 @@
 
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 
-        <link rel="shortcut icon" href="img/ICONOGRANDE2.png">
+        <link rel="shortcut icon" href="../img/ICONO.png">
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SIS-PONCELET</title>
+        <title>NAXSAN</title>
         
     </head>
     <body class="sb-nav-fixed">
