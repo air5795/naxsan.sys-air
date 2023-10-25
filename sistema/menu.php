@@ -258,13 +258,13 @@ if (empty($_SESSION['active'])) {
 
 
 
-                                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#cajachica2" aria-expanded="false" aria-controls="collapsePages">
+                                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#cajachica3" aria-expanded="false" aria-controls="collapsePages">
                                             <div class="sb-nav-link-icon"><i class="fa-solid fa-sack-dollar"></i></div>
                                             Caja Chica LA PAZ
                                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                         </a>
 
-                                        <div class="collapse" id="cajachica2" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                        <div class="collapse" id="cajachica3" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
 
                                                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth2" aria-expanded="false" aria-controls="pagesCollapseAuth">
