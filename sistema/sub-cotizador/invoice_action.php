@@ -78,7 +78,7 @@
 						}
 
 						if ($invoiceDetails['id_usuario'] == 'Denis Daniel Arispe Ponce') {
-							$user6 = '<span style="font-size:12px;background-color:#b1dcff;text-align: left; " class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Lucia Condori  </span>'.'<br/>';
+							$user6 = '<span style="font-size:12px;background-color:#b1dcff;text-align: left; " class="btn  btn-sm w-100"><i class="bi bi-person-circle"></i> Denis Arispe  </span>'.'<br/>';
 						} else {
 							$user6 = '';
 						}
