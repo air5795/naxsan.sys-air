@@ -9,8 +9,9 @@ include("funciones.php");
 if ($_POST["operacion"] == "Crear") {
 
 
-    $stmt = $conexion->prepare("INSERT INTO salidas(personal, lugar, motivo)
-                                VALUES(:personal, :lugar, :motivo)");
+    $stmt = $conexion->prepare("INSERT INTO salidas(personal, lugar, motivo, hora)
+    VALUES(:personal, :lugar, :motivo, DATE_ADD(NOW(), INTERVAL 2 HOUR));
+    ");
 
     $resultado = $stmt->execute(
         array(
