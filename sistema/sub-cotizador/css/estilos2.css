@@ -115,3 +115,7 @@ body.darkmode .zona-cliente{
   background-color: #212529;
   color: white;
 }
+
+tr[draggable="true"] {
+  cursor: move;
+}
