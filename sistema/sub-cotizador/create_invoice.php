@@ -1,6 +1,19 @@
 <?php
-
+// Iniciar la sesión
 session_start();
+// Configurar la duración de la sesión en segundos (por ejemplo, 1 hora)
+$sesionDuracion = 3600; // 3600 segundos = 1 hora
+
+// Verificar si la sesión está configurada
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $sesionDuracion)) {
+    // La sesión ha expirado, destruir la sesión
+    session_unset();
+    session_destroy();
+} else {
+    // La sesión no ha expirado, actualizar el tiempo de actividad
+    $_SESSION['last_activity'] = time();
+}
+
 $usuario = $_SESSION['nombre'];
 include "../../conexion.php";
 
@@ -29,6 +42,10 @@ $invoice = new Invoice();
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 
 		<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+		
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+	
+		
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.js"></script>
 
         <link rel="shortcut icon" href="img/ICONO2.png">
@@ -38,9 +55,6 @@ $invoice = new Invoice();
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>SIS-NAXSAN</title>
-
-		
-        
     </head>
 	<body class="sb-nav-fixed">
 
@@ -237,7 +251,7 @@ $invoice = new Invoice();
 							<th width="8%" style="background-color: #defff7;">SubTotal Compra</th>
 						</tr>
 						
-						<tr>
+						<tr draggable="true">
 						
 							<td style="padding: 0;"><input class="itemRow" type="checkbox"></td>
 							<td style="padding: 0;"><input class="form-control form-control-sm" type="text" name="productCode[]" id="productCode_1" class="form-control" autocomplete="off"></td>
@@ -419,8 +433,46 @@ $invoice = new Invoice();
 
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
 <?php include('inc/footer.php'); ?>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const filasArrastrables = document.querySelectorAll("#invoiceItem tbody tr");
+
+    filasArrastrables.forEach(fila => {
+        fila.draggable = true;
+
+        fila.addEventListener("dragstart", function(e) {
+            e.dataTransfer.setData("text/plain", fila.id);
+        });
+
+        fila.addEventListener("dragover", function(e) {
+            e.preventDefault();
+        });
+
+        fila.addEventListener("drop", function(e) {
+            e.preventDefault();
+            const filaArrastradaId = e.dataTransfer.getData("text/plain");
+            const filaArrastrada = document.getElementById(filaArrastradaId);
+
+            // Intercambia las posiciones de las filas
+            const padre = fila.parentNode;
+            const indiceFilaSoltada = Array.prototype.indexOf.call(padre.children, fila);
+            const indiceFilaArrastrada = Array.prototype.indexOf.call(padre.children, filaArrastrada);
+
+            padre.insertBefore(filaArrastrada, fila);
+        });
+    });
+});
+
+</script>
+
+
 
 
 
@@ -485,7 +537,6 @@ $invoice = new Invoice();
 <script>
 
 //MODO OSCURO 
-
 const bdark = document.querySelector('#bdark');
 const main = document.querySelector('main');
 const body = document.querySelector('body');
@@ -498,16 +549,10 @@ bdark.addEventListener('click',e =>{
 	body.classList.toggle('darkmode');
 });
 
-
-
 const table = document.querySelector('table');
 	bdark.addEventListener('click',e =>{
 	table.classList.toggle('table-dark');
 });
-
-
-
-
-
 </script>
+
 
