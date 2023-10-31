@@ -254,7 +254,7 @@
 
                                 <tr style="background-color: <?php echo $colorFondo; ?>; color: <?php echo $colorTexto; ?>;">
                                 <td><?php echo $data['row_num'] ?></td>
-                                <td style="font-weight: 600;"><?php echo $data['pro_nombre'] ?></td>
+                                <td style="font-weight: 600"><?php echo $data['pro_nombre'] ?></td>
                                 <td ><?php
 
                                     
