@@ -253,7 +253,7 @@
                             $colorTexto = ($luminosidad > 0.5) ? '#000000' : '#FFFFFF';
                             ?>
 
-                                <tr style="background-color: <?php echo $colorFondo; ?>; color: <?php echo $colorTexto; ?>;">
+                            <tr style="background-color: <?php echo $colorFondo; ?>; color: <?php echo $colorTexto; ?>;">
                                 <td><?php echo $data['row_num'] ?></td>
                                 <td><?php echo $data['pro_nombre'] ?></td>
                                 <td ><?php
