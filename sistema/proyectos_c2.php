@@ -226,22 +226,7 @@
                                     $result = mysqli_num_rows($query);
                                     if ($result > 0) {
                                         while ($data = mysqli_fetch_array($query)) {
-                                            // Obtener el color de fondo desde la base de datos
-                            $colorFondo = $data['color'];
-
-                            // Función para calcular la luminosidad del color
-                            function calcularLuminosidad($color) {
-                                $r = hexdec(substr($color, 1, 2));
-                                $g = hexdec(substr($color, 3, 2));
-                                $b = hexdec(substr($color, 5, 2));
-                                return (0.299 * $r + 0.587 * $g + 0.114 * $b) / 255;
-                            }
-
-                            // Calcular luminosidad del color de fondo
-                            $luminosidad = calcularLuminosidad($colorFondo);
-
-                            // Establecer el color del texto basado en la luminosidad del fondo
-                            $colorTexto = ($luminosidad > 0.5) ? '#000000' : '#FFFFFF';
+                              
                                             
                                             
 
