@@ -234,8 +234,21 @@
 
                                     ?>
 
-                            <?php
-                            // Obtener el color de fondo desde la base de datos
+                           
+
+                            <tr style="background-color: <?php echo $colorFondo; ?>; color: <?php echo $colorTexto; ?>;">
+                                <td><?php echo $data['row_num'] ?></td>
+                                <td><?php echo $data['pro_nombre'] ?></td>
+                                <td ><?php
+
+
+                                    
+
+                                    $pro = $data['pro_nombre'];
+                                    $idp = $data['id_proyecto'];
+                                    $color = $data['color'];
+
+                                    // Obtener el color de fondo desde la base de datos
                             $colorFondo = $data['color'];
 
                             // Función para calcular la luminosidad del color
@@ -251,18 +264,6 @@
 
                             // Establecer el color del texto basado en la luminosidad del fondo
                             $colorTexto = ($luminosidad > 0.5) ? '#000000' : '#FFFFFF';
-                            ?>
-
-                            <tr style="background-color: <?php echo $colorFondo; ?>; color: <?php echo $colorTexto; ?>;">
-                                <td><?php echo $data['row_num'] ?></td>
-                                <td><?php echo $data['pro_nombre'] ?></td>
-                                <td ><?php
-
-                                    
-
-                                    $pro = $data['pro_nombre'];
-                                    $idp = $data['id_proyecto'];
-                                    $color = $data['color'];
 
 
                                     
