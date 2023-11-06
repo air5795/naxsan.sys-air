@@ -114,7 +114,8 @@ class Invoice
     {
         $sqlInsert = "
             INSERT INTO " . $this->invoiceOrderTable . "(id_usuario, 
-            cliente_nombre, 
+            cliente_nombre,
+            fecha_cotizacion, 
             cliente_direccion, 
             total_antes_impuestos, 
             total_impuestos, 
@@ -131,8 +132,9 @@ class Invoice
             tiempo_garantia, 
             validez_cotizacion, 
             tiempo_entrega) 
-            VALUES ('" . $POST['userId'] . "',
+            VALUES ('" . $POST['u'] . "',
              '" . $POST['companyName'] . "',
+             '" . $POST['datetime'] . "',
              '" . $POST['address'] . "',
              '" . $POST['subTotal'] . "',
              '" . $POST['taxAmount'] . "',

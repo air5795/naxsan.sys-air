@@ -144,13 +144,13 @@ $invoice = new Invoice();
 				<h4><i class="bi bi-paperclip"></i> Llenar Informacion de la Cotizacion</h4>
 					<hr>
 
-					<div class="form-group col-sm-3">
-						<button class="btn btn-sm boton-ale w-100"><i class="bi bi-person-plus-fill"></i> Nuevo Cliente </button>
+					<div class="form-group col-sm-2">
+						<button class="btn btn-sm boton-ale w-100"><i class="bi bi-person-plus-fill"> <br></i> Nuevo Cliente </button>
 					</div>
 
 
-					<div class="form-group col-sm-6">
-						
+					<div class="form-group col-sm-4">
+						<p style="margin:0"><i class="bi bi-person-lines-fill"></i> Lista Clientes</p>
 						<select style="width:100%;font-size:12px ;" name="nombre" id="nombre" class="form-control  js-example-basic-single "  required onchange="fetchClienteData()" required >
                         <option value="" >Seleccione una opción : </option>
 							<?php
@@ -165,15 +165,25 @@ $invoice = new Invoice();
                         </select>
 					</div>
 
-					<div class="form-group col-sm-3">
+					<div class="form-group col-sm-4">
 
-					<div class="input-group input-group-sm mb-3">
-						<span class="input-group-text detalle1 w-50" id="inputGroup-sizing-sm"><i style="writing-mode: tb;" class="bi bi-clock-history"></i> HORA DE COTIZACION</span>
-						<input class="form-control w-50" type="time" name="tiempo_entrega" id="tiempo_entrega" placeholder="Tiempo de Entrega" value="<?php echo date('H:i'); ?>">
+					<div class="input-group-sm">
+						<p style="margin:0"><i style="writing-mode: tb;" class="bi bi-person-circle"></i> Nombre de Cotizador</p> 
+						<input style="border-radius: 10px;background-color: #dcffe3;text-align: center;font-weight: 500;" class="form-control " type="text" name="u" id="u" placeholder="Usuario" value="<?php echo $usuario?>">
 					</div>
 
+					</div>
+
+					<div class="form-group col-sm-2">
+
+					<div class="input-group-sm">
+						<p style="margin:0"><i style="writing-mode: tb;" class="bi bi-clock-history"></i> Hora de Cotización</p>
+						<input style="border-radius: 10px;background-color: #dcffeb;text-align: center;font-weight: 500;" class="form-control " type="datetime" name="datetime" id="datetime" placeholder="Tiempo de Entrega" value="<?php echo date('Y-m-d H:i:s'); ?>">
+					</div>
 
 					</div>
+
+					
 
 					
 					<hr style="color: #dbdbdb;">
@@ -182,46 +192,46 @@ $invoice = new Invoice();
 
 					
 
-						<div class="input-group input-group-sm mb-3">
-							<span class="input-group-text detalle1 w-50" id="basic-addon1"><i style="writing-mode: tb;" class="bi bi-people"></i> Nombre Cliente</span>
-							<input type="text" class="form-control form-control-sm w-50" name="companyName" id="companyName"  autocomplete="off" required>
+						<div class="input-group-sm">
+							
+							<input style="border-radius: 10px;background-color: cornsilk;text-align: center;font-weight: 500;" type="text" class="form-control form-control-sm " name="companyName" id="companyName"  autocomplete="off" placeholder="Nombre Cliente" required>
 						</div>
 
 					</div>
 
 					<div class="form-group col-sm-6">
 
-						<div class="input-group input-group-sm mb-3">
-							<span class="input-group-text detalle1 w-50" id="basic-addon1"><i style="writing-mode: tb;" class="bi bi-file-earmark-text"></i> NIT</span>
-							<input class="form-control form-control-sm w-50" type="text" name="address" id="address"  >
+						<div class="input-group-sm">
+							
+							<input style="border-radius: 10px;background-color: cornsilk;text-align: center;font-weight: 500;" class="form-control form-control-sm" type="text" name="address" id="address" placeholder="NIT o CI"  >
 						</div>
 
 					</div>
-					<br> 
+					<br> <br>
 
 					<div class="form-group col-sm-4">
 
-					<div class="input-group input-group-sm mb-3">
-						<span class="input-group-text detalle1 w-50" id="inputGroup-sizing-sm"><i style="writing-mode: tb;" class="bi bi-hourglass"></i> TIEMPO GARANTIA</span>
-						<input class="form-control w-50 " type="text" name="tiempo_garantia" id="tiempo_garantia" placeholder="Tiempo de Garantia">
-					</div>
-
-					</div>
-
-					<div class="form-group col-sm-4">
-
-					<div class="input-group input-group-sm mb-3">
-						<span class="input-group-text detalle1 w-50" id="inputGroup-sizing-sm"><i style="writing-mode: tb;" class="bi bi-file-earmark-text"></i>TIEMPO VALIDEZ</span>
-						<input class="form-control w-50 " type="text" name="validez_cotizacion" id="validez_cotizacion" placeholder="Validez de Cotizacion">
+					<div class="input-group-sm">
+						
+						<input style="border-radius: 10px;background-color: #eaf6ff;text-align: center;font-weight: 500;" class="form-control " type="text" name="tiempo_garantia" id="tiempo_garantia" placeholder="Tiempo de Garantia">
 					</div>
 
 					</div>
 
 					<div class="form-group col-sm-4">
 
-					<div class="input-group input-group-sm mb-3">
-						<span class="input-group-text detalle1 w-50" id="inputGroup-sizing-sm"><i style="writing-mode: tb;" class="bi bi-clock-history"></i> TIEMPO DE ENTREGA</span>
-						<input class="form-control w-50 " type="text" name="tiempo_entrega" id="tiempo_entrega" placeholder="Tiempo de Entrega">
+					<div class="input-group-sm">
+						
+						<input style="border-radius: 10px;background-color: #eaf6ff;text-align: center;font-weight: 500;" class="form-control " type="text" name="validez_cotizacion" id="validez_cotizacion" placeholder="Validez de Cotizacion">
+					</div>
+
+					</div>
+
+					<div class="form-group col-sm-4">
+
+					<div class="input-group-sm">
+						
+						<input style="border-radius: 10px;background-color: #eaf6ff;text-align: center;font-weight: 500;" class="form-control" type="text" name="tiempo_entrega" id="tiempo_entrega" placeholder="Tiempo de Entrega">
 					</div>
 
 					</div>
@@ -312,7 +322,7 @@ $invoice = new Invoice();
 					</div>
 					<br>
 					<div class="form-group">
-						<input type="hidden" value="<?php echo $usuario ?>" class="form-control" name="userId">
+						
 						<button data-loading-text="Guardando factura..." type="submit" name="invoice_btn" class="btn btn-success submit_btn invoice-save-btm">
 							<i class="fas fa-save"></i> Guardar Cotizacion
 						</button>
