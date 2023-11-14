@@ -1,19 +1,8 @@
 <?php
 // Iniciar la sesión
 session_start();
-// Configurar la duración de la sesión en segundos (por ejemplo, 1 hora)
-$sesionDuracion = 3600; // 3600 segundos = 1 hora
-
-// Verificar si la sesión está configurada
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $sesionDuracion)) {
-    // La sesión ha expirado, destruir la sesión
-    session_unset();
-    session_destroy();
-} else {
-    // La sesión no ha expirado, actualizar el tiempo de actividad
-    $_SESSION['last_activity'] = time();
-}
-
+session_set_cookie_params(14400, '/');
+session_regenerate_id(true);
 $usuario = $_SESSION['nombre'];
 include "../../conexion.php";
 
