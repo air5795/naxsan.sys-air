@@ -236,7 +236,7 @@
 
 
                             <tr style="background-color:<?php echo $data['color'];?> ;">
-                                <td><?php echo $data['row_num'] ?></td>
+                                <td> <div style="background-color:#383838 ;" class="btn btn-sm btn-secondary w-100"><?php echo $data['row_num'] ?></div></td>
                                 <td> <div style="background-color:#383838 ;" class="btn btn-sm btn-secondary w-100"> <?php echo $data['pro_nombre'] ?> </div></td>
                                 <td ><?php
 
