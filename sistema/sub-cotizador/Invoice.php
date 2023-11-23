@@ -230,6 +230,113 @@ class Invoice
         }
     }
 
+
+
+    public function getInvoiceDetails($invoiceId)
+{
+    $sql = "SELECT * FROM " . $this->invoiceOrderTable . " WHERE id_cotizacion = '" . $invoiceId . "'";
+    $result = mysqli_query($this->dbConnect, $sql);
+
+    if ($result) {
+        $invoiceDetails = mysqli_fetch_assoc($result);
+
+        // Obtener ítems asociados a la cotización
+        $itemsSql = "SELECT * FROM " . $this->invoiceOrderItemTable . " WHERE id_cotizacion = '" . $invoiceId . "'";
+        $itemsResult = mysqli_query($this->dbConnect, $itemsSql);
+
+        if ($itemsResult) {
+            $items = [];
+            while ($item = mysqli_fetch_assoc($itemsResult)) {
+                $items[] = $item;
+            }
+            $invoiceDetails['items'] = $items;
+        } else {
+            $invoiceDetails['items'] = [];
+        }
+
+        return $invoiceDetails;
+    } else {
+        return false;
+    }
+}
+
+    
+    public function duplicateInvoice($invoiceId)
+{
+    $existingInvoice = $this->getInvoiceDetails($invoiceId);
+
+    $clienteNombre = $existingInvoice['cliente_nombre'];
+    $clienteDireccion = $existingInvoice['cliente_direccion'];
+    $fechaCotizacion = date('Y-m-d H:i:s');  // Puedes ajustar esto según tus necesidades
+
+    // Duplicar en COTIZACION
+    $sqlDuplicate = "
+        INSERT INTO " . $this->invoiceOrderTable . " 
+        (id_usuario, cliente_nombre, fecha_cotizacion, cliente_direccion, 
+        total_antes_impuestos, total_impuestos, porcentaje, transporte, 
+        total_despues_impuestos, total_antes_impuestos_c, order_amount_paid, 
+        order_total_amount_due, total_gastos, total_ganancia, porcentaje_ganancia, 
+        nota, tiempo_garantia, validez_cotizacion, tiempo_entrega) 
+        VALUES 
+        ('" . $existingInvoice['id_usuario'] . "', '$clienteNombre', '$fechaCotizacion', '$clienteDireccion', 
+        '" . $existingInvoice['total_antes_impuestos'] . "', '" . $existingInvoice['total_impuestos'] . "', '" . $existingInvoice['porcentaje'] . "', '" . $existingInvoice['transporte'] . "', 
+        '" . $existingInvoice['total_despues_impuestos'] . "', '" . $existingInvoice['total_antes_impuestos_c'] . "', '" . $existingInvoice['order_amount_paid'] . "', 
+        '" . $existingInvoice['order_total_amount_due'] . "', '" . $existingInvoice['total_gastos'] . "', '" . $existingInvoice['total_ganancia'] . "', '" . $existingInvoice['porcentaje_ganancia'] . "', 
+        '" . $existingInvoice['nota'] . "', '" . $existingInvoice['tiempo_garantia'] . "', '" . $existingInvoice['validez_cotizacion'] . "', '" . $existingInvoice['tiempo_entrega'] . "')";
+
+    mysqli_query($this->dbConnect, $sqlDuplicate);
+
+    // Obtener el nuevo ID de la cotización duplicada en COTIZACION
+    $lastInsertId = mysqli_insert_id($this->dbConnect);
+
+    // Duplicar ítems en ITEMS_COTIZACION
+    foreach ($existingInvoice['items'] as $item) {
+        $codigoItem = $item['codigo_item'];
+        $nombreItem = $item['nombre_item'];
+        $cantidadItem = $item['cantidad_item'];
+        $precioItem = $item['precio_item'];
+        $subtotalItem = $item['subtotal_item'];
+        $marcaItem = $item['marca_item'];
+        $unidadItem = $item['unidad_item'];
+        $precioItemC = $item['precio_item_c'];
+        $subtotalItemC = $item['subtotal_item_c'];
+
+        $sqlInsertItem = "
+            INSERT INTO " . $this->invoiceOrderItemTable . "(id_cotizacion,
+            codigo_item, nombre_item, cantidad_item, precio_item, subtotal_item,
+            marca_item, unidad_item, precio_item_c, subtotal_item_c) 
+            VALUES 
+            ('$lastInsertId', '$codigoItem', '$nombreItem', '$cantidadItem', '$precioItem', '$subtotalItem',
+            '$marcaItem', '$unidadItem', '$precioItemC', '$subtotalItemC')";
+            
+        mysqli_query($this->dbConnect, $sqlInsertItem);
+    }
+
+    return $lastInsertId;
+}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function getInvoice($invoiceId)
     {
         $sqlQuery = "SELECT * FROM  $this->invoiceOrderTable  WHERE id_cotizacion = '$invoiceId'";

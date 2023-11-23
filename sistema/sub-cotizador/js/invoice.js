@@ -135,7 +135,7 @@ $(document).ready(function() {
 	$(document).on('click', '#addRows', function() {
 		count++;
 		var htmlRows = '';
-		htmlRows += '<tr draggable="true">';
+		htmlRows += '<tr>';
 		htmlRows += '<td style="padding: 0;"><input class="itemRow" type="checkbox"></td>';
 		htmlRows += '<td style="padding: 0;"><input type="text" name="productCode[]" id="productCode_' + count + '" class="form-control form-control-sm" autocomplete="off"></td>';
 		
@@ -157,7 +157,7 @@ $(document).ready(function() {
 	  $(document).on('click', '#addtext', function() {
 		count++;
 		var htmlRows = '';
-		htmlRows += '<tr draggable="true">';
+		htmlRows += '<tr >';
 		htmlRows += '<td style="padding: 0;"><input class="itemRow" type="checkbox"></td>';
 		htmlRows += '<td style="padding: 0;"><input type="text" name="productCode[]" id="productCode_' + count + '" class="form-control form-control-sm" autocomplete="off"></td>';
 		
@@ -180,7 +180,7 @@ $(document).ready(function() {
 	  $(document).on('click', '#addtext2', function() {
 		count++;
 		var htmlRows = '';
-		htmlRows += '<tr draggable="true">';
+		htmlRows += '<tr >';
 		htmlRows += '<td style="padding: 0;"><input class="itemRow" type="checkbox"></td>';
 		htmlRows += '<td style="padding: 0;"><input type="text" name="productCode[]" id="productCode_' + count + '" class="form-control form-control-sm" autocomplete="off"></td>';
 		

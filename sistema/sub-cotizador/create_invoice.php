@@ -1,8 +1,6 @@
 <?php
 // Iniciar la sesión
 session_start();
-session_set_cookie_params(14400, '/');
-session_regenerate_id(true);
 $usuario = $_SESSION['nombre'];
 include "../../conexion.php";
 
@@ -250,7 +248,7 @@ $invoice = new Invoice();
 							<th width="8%" style="background-color: #defff7;">SubTotal Compra</th>
 						</tr>
 						
-						<tr draggable="true">
+						<tr >
 						
 							<td style="padding: 0;"><input class="itemRow" type="checkbox"></td>
 							<td style="padding: 0;"><input class="form-control form-control-sm" type="text" name="productCode[]" id="productCode_1" class="form-control" autocomplete="off"></td>
