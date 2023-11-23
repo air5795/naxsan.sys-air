@@ -107,6 +107,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                             <th>Quien lo creo ?</th>
                             <th>Imprimir</th>
                             <th>Editar</th>
+                            <th>Duplicar</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
@@ -153,6 +154,7 @@ $(document).ready(function() {
       { data: 'id_usuario', title: 'Quien lo Creó ?' },
       { data: 'print_link', title: 'Imprimir' },
       { data: 'edit_link', title: 'Editar' },
+      { data: 'duplic_link', title: 'Duplicar' },
       { data: 'delete_link', title: 'Eliminar' }
     ],
     language: {

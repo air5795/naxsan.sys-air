@@ -46,6 +46,7 @@ $invoice = new Invoice();
 					  //$invoiceDate = date("d/M/Y, H:i:s", strtotime($invoiceDetails["fecha_cotizacion"]));
 					  $printLink = '<a class="btn btn-sm btn-outline-danger w-100" target="_blank" href="print_invoice.php?invoice_id=' . $invoiceDetails["id_cotizacion"] . '" title="Imprimir Cotizacion" ><span <i class="bi bi-file-earmark-pdf"></i> PDF</a>';
 					  $editLink = '<a style="background-color:beige; color:#646464" class="btn btn-sm btn-warning w-100" href="edit_invoice.php?update_id=' . $invoiceDetails["id_cotizacion"] . '"  title="Editar Cotizacion"><i class="bi bi-pencil-square"></i> </a>';
+					  $duplicLink = '<a style="background-color:#b2e7dd; color:#646464 ; border: 1px solid #35caa6" class="btn btn-sm btn-warning w-100" href="duplic_invoice.php?update_id=' . $invoiceDetails["id_cotizacion"] . '"  title="Duplicar Cotizacion"><i class="bi bi-files"></i> </a>';
 					  $deleteLink = '<a class="btn btn-sm btn-danger w-100 deleteInvoice" href="#" id="' . $invoiceDetails["id_cotizacion"] . '" class="deleteInvoice"  title="Eliminar Cotizacion"><i class="bi bi-trash-fill"></i> </a>';
 
 					  	if ($invoiceDetails['id_usuario'] == 'Jazmin Velasco Diaz') {
@@ -94,6 +95,7 @@ $invoice = new Invoice();
 						  'id_usuario' => $user.$user2.$user3.$user4.$user5.$user6,
 						  'print_link' => $printLink,
 						  'edit_link' => $editLink,
+						  'duplic_link' => $duplicLink,
 						  'delete_link' => $deleteLink
 					  );
 				  }
