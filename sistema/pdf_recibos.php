@@ -106,7 +106,8 @@ ob_start();
 <body >
         <header>
         
-          <img src="img/FONDITO.png" height="100%" width="100%" />                 
+          <img src="img/FONDITO.png" height="100%" width="100%" />                                 
+
         </header>
 
   <!-- Cabecera -->
