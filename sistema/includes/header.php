@@ -33,6 +33,7 @@ if (empty($_SESSION['active'])) {
                                 $tipo = 'Trabajador';
                                 echo $_SESSION['nombre'] .' - ('.$tipo.')';
                             }   
+
                         ?>
                                                 
                     </p>    
@@ -161,28 +162,19 @@ if (empty($_SESSION['active'])) {
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapsei" aria-expanded="false" aria-controls="pagesCollapseError">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                                Inventario Mercaderia
+                                Inventarios
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="pagesCollapsei" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <!--<a class="nav-link" href="categorias_i.php">Categorias mercaderia</a> 
                                     <a class="nav-link" href="inventario_i.php">Gestor Inventario</a>-->
-                                    <a class="nav-link" href="inventario_i.php">Gestor Inventario</a>
+                                    <a class="nav-link" href="#">Inventario de Mercaderia</a>
+                                    <a class="nav-link" href="sub-inventarios-activos/">Inventario Activos Fijos</a>
                                 </nav>
                             </div>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseie" aria-expanded="false" aria-controls="pagesCollapseError">
-                            <div class="sb-nav-link-icon"><i class="fa-solid fa-box-open"></i></div>
-                                Activos Empresa
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="pagesCollapseie" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="categorias_a.php">Categorias Activos </a> 
-                                    <a class="nav-link" href="activos.php">Gestor Activos</a> 
-                                </nav>
-                            </div>
+                            
 
                             
 
