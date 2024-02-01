@@ -1,5 +1,8 @@
 <?php
-include "../../conexion.php";
+    
+    session_start();
+    include "../../conexion.php";
+
 ?>
 
 
