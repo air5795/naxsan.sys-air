@@ -571,7 +571,7 @@
                         data:{id_activo:id_activo},
                         success:function(data)
                         {
-                            dataTable.ajax.reload();
+                            dataTableactivo.ajax.reload();
                         }
                     });
 
