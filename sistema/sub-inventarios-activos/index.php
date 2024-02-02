@@ -186,6 +186,7 @@
                                 <option value="">Selecciona una Opcion</option>
                                 <option value="Nuevo">Nuevo</option>
                                 <option value="Semi-nuevo">Semi-nuevo</option>
+                                <option value="Usado">Usado</option>
                                 <option value="Mal-Estado">Mal-Estado</option>
                             </select>
                         </div>
