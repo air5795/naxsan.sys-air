@@ -32,7 +32,7 @@
 
         $imagen = '';
         if($fila["foto"] != '' ){
-            $imagen = '<img  class="gallery-item boton-w" src="productos/'.$fila['foto'].'" height="100px"    id="productos/'.$fila['foto'].'">';
+            $imagen = '<img  class="gallery-item boton-w" src="productos/'.$fila['foto'].'" height="50px"    id="productos/'.$fila['foto'].'">';
             //$image = '<a class="btn btn-outline-primary btn-sm gallery-item boton-w"  id="actas/'.$fila['image'].'"><i class="fa-solid fa-image"></i> </a>';
         }else{
             $imagen = '<a class="btn btn-outline-secondary btn-sm gallery-item boton-w disabled" id=""><i class="fa-solid fa-ban"></i> </a>';
