@@ -49,7 +49,7 @@
 
          $pagina = '';
         if($fila["pagina"] != ''){
-            $pagina = '<a  target="_blank" class="btn btn-outline-success btn-sm boton-w boton-f " href="'.$fila['pagina'].' "><i class="bi bi-back"></i> IR A PAGINA WEB</a>';
+            $pagina = '<a  target="_blank" class="btn btn-info btn-sm boton-w boton-f " href="'.$fila['pagina'].' "><i class="bi bi-back"></i> Pagina Web</a>';
         }else{
             $pagina = '<a class="btn btn-outline-secondary btn-sm boton-w disabled" href="" ><i class="fa-solid fa-ban"></i></a>';
         } 
@@ -69,8 +69,8 @@
         
         $sub_array[] = $fila["usuario"];
         $sub_array[] = $fila["password"];
-        $sub_array[] = $pagina.$imagen;
-        
+        $sub_array[] = $imagen;
+        $sub_array[] = $pagina;
         
        /*  $sub_array[] = $ficha;
         $sub_array[] = $certificado; */

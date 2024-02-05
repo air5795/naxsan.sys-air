@@ -81,16 +81,17 @@
         <hr style="background-color: red;">
 
         <div class="table-responsive" style="font-size: 11px; width:100%">
-            <table id="datos_usuario" class="table table-hover table-striped" style="width:100%; text-align:center" >
+            <table id="datos_usuario" class="responsive display nowrap table table-hover table-striped" style="width:100%; text-align:center" >
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th width="25%">NOMBRE</th>
                         
                         <th>USUARIO</th>
-                        <th>CONSTRASEÑA</th>
-                        <th width="15%">PAGINA WEB</th>
+                        <th data-priority="1">CONSTRASEÑA</th>
+                        <th data-priority="2" width="15%">PAGINA WEB</th>
                         
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -299,6 +300,8 @@
                 },
                 "columnsDefs":[
                     {
+                    "responsivePriority": 1, targets: 0 ,
+		            "responsivePriority": 2, targets: 4 ,
                     "targets":[0, 3, 4],
                     "orderable":false,
                     },
