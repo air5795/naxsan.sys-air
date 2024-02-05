@@ -60,7 +60,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SISPONCELET</title>
+        <title>SIS-NAXSAN</title>
         
     </head>
     <body class="sb-nav-fixed">
@@ -74,7 +74,7 @@
                     <div class="container-fluid px-4">
                     <div class="container-fluid px-4 row">
                     
-                    <h1 class="mt-4 col"> <i class="fa-solid fa-key"></i> Claves PONCELET</h1>  
+                    <h1 class="mt-4 col"> <i class="fa-solid fa-key"></i> Claves NAXSAN</h1>  
                         
                         <hr>
                        <!-- contenido del sistema 2--> 

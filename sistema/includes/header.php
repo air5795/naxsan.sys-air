@@ -145,7 +145,7 @@ if (empty($_SESSION['active'])) {
                             </a>
                             <div class="collapse" id="pagesCollapseclaves" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="claves.php">Credenciales de la Empresa</a> 
+                                    <a class="nav-link" href="sub-credenciales/">Credenciales de la Empresa</a> 
                                 </nav>
                             </div>
 
