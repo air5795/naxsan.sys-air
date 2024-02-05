@@ -421,7 +421,7 @@
             });
             
             var dataTableactivo = $('#datos_usuario').DataTable({
-                "pageLength": 25,
+                "pageLength": 7,
                 "processing":true,
                 "serverSide":true,
                 "order":[],
