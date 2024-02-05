@@ -32,7 +32,7 @@
 
         $imagen = '';
         if($fila["foto"] != '' ){
-            $imagen = '<img class="gallery-item boton-w" src="productos/'.$fila['foto'].'" height="100px"    id="productos/'.$fila['foto'].'">';
+            $imagen = '<img  class="gallery-item boton-w" src="productos/'.$fila['foto'].'" height="100px"    id="productos/'.$fila['foto'].'">';
             //$image = '<a class="btn btn-outline-primary btn-sm gallery-item boton-w"  id="actas/'.$fila['image'].'"><i class="fa-solid fa-image"></i> </a>';
         }else{
             $imagen = '<a class="btn btn-outline-secondary btn-sm gallery-item boton-w disabled" id=""><i class="fa-solid fa-ban"></i> </a>';
@@ -69,8 +69,8 @@
         
         $sub_array[] = $fila["usuario"];
         $sub_array[] = $fila["password"];
-        $sub_array[] = $pagina;
-        $sub_array[] = $imagen;
+        $sub_array[] = $pagina.$imagen;
+        
         
        /*  $sub_array[] = $ficha;
         $sub_array[] = $certificado; */

@@ -89,8 +89,8 @@
                         
                         <th>USUARIO</th>
                         <th>CONSTRASEÑA</th>
-                        <th>PAGINA WEB</th>
-                        <th width="10%">FOTO</th>
+                        <th width="15%">PAGINA WEB</th>
+                        
                         <th></th>
                         <th></th>
                     </tr>

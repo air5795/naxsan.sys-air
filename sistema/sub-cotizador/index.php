@@ -100,11 +100,11 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                     <thead>
                         <tr>
                             <th># Cotizacion</th>
-                            <th>Fecha Creación</th>
-                            <th>Nombre del Cliente</th>
+                            <th width="10%">Fecha Creación</th>
+                            <th width="20%">Nombre del Cliente</th>
                             <th>Notas</th>
                             <th>Total (Monto)</th>
-                            <th>Quien lo creo ?</th>
+                            <th width="10%">Quien lo creo ?</th>
                             <th>Imprimir</th>
                             <th>Editar</th>
                             <th>Duplicar</th>
