@@ -88,8 +88,8 @@
                         <th width="25%">NOMBRE</th>
                         
                         <th>USUARIO</th>
-                        <th data-priority="1">CONSTRASEÑA</th>
-                        <th data-priority="2" width="15%">PAGINA WEB</th>
+                        <th>CONSTRASEÑA</th>
+                        <th>IMG</th>
                         
                         <th></th>
                         <th></th>
