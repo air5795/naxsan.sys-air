@@ -25,6 +25,8 @@ if (isset($_POST["id_activo"])) {
             $salida["foto"] = '<div class="alert alert-danger" role="alert"> <input type="hidden" name="img_o" value="" /> <i class="bi bi-exclamation-octagon-fill"></i> Sin Foto</div>' ;
             //$salida["foto"] = '<input type="hidden" name="img_o" value="" />';
         }
+
+       
         
         
     }

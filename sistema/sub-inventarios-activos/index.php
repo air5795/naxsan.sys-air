@@ -206,6 +206,9 @@
                         <div class="col-6">
                             <span id="imagen-subida"></span>
                         </div>
+                        <div class="col-6">
+                            <span id="qr-subido"></span>
+                        </div>
                         
                         
                         
@@ -431,6 +434,7 @@
                     "targets":[0, 3, 4],
                     "orderable":false,
                     },
+                    
                 ],
                 "language": {
                 "decimal": "",
@@ -453,6 +457,8 @@
                 }
             }
             });
+
+            
 
             
 
@@ -532,18 +538,30 @@
                         //console.log(data);				
                         $('#modalproductos').modal('show');
                         $('#nombre').val(data.nombre);
-                        $('#categoria').val(data.categoria);
+                        $('#categoria').val(data.categoria); 
                         $('#responsable').val(data.responsable);
                         $('#ubicacion').val(data.ubicacion);
                         $('#estado').val(data.estado);
                         $('#observacion').val(data.observacion);
+                        reloadCategoriaSelect();
+                        
+
+                       
+
+                        
+                        /* $('#categoria').selectpicker('refresh'); */
         
                         $('.modal-title').text("Editar Activo Fijo");
                         $('#id_activo').val(id_activo);
                         $('#imagen-subida').html(data.foto);
+                        $('#qr-subido').html(data.qr);
                       
                         $('#action').val("Editar");
                         $('#operacion').val("Editar");
+
+                        $('#modalproductos').on('hidden.bs.modal', function () {
+                            dataTableactivo.ajax.reload();
+                        });
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);

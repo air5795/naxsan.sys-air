@@ -37,36 +37,14 @@ if ($_POST["operacion"] == "Crear") {
     );
 
     if (!empty($resultado)) {
+        // Obtener el ID del activo fijo recién insertado
+        $lastInsertedID = $conexion->lastInsertId();
 
-       // Obtener el ID del activo fijo recién insertado
-       $lastInsertedID = $conexion->lastInsertId();
-
-       // Crear una cadena de datos para el QR
-       $qrData = "ID: $lastInsertedID\nNombre: {$_POST["nombre"]}\nCategoria: {$_POST["categoria"]}\nResponsable: {$_POST["responsable"]}\nUbicacion: {$_POST["ubicacion"]}\nObservacion: {$_POST["observacion"]}";
-
-       // Directorio donde se almacenarán los códigos QR (asegúrate de tener permisos de escritura)
-       $dir = 'qr/';
-
-       // Nombre del archivo QR
-       $qrFileName = $dir . 'qr_' . $lastInsertedID . '.png';
-
-       // Generar el código QR
-       if (QRcode::png($qrData, $qrFileName)) {
-           echo 'Código QR generado y guardado correctamente.<br>';
-       } else {
-           echo 'Error al generar el código QR.<br>';
-       }
-
-
-       // Actualizar la base de datos con el nombre del archivo QR
-       $stmt = $conexion->prepare("UPDATE activos_fijos SET qr = :qr WHERE id_activo = :id");
-       $stmt->execute(array(':qr' => $qrFileName, ':id' => $lastInsertedID));
-
-       echo 'Registro creado y código QR generado.';
-
-   } else {
-       echo 'Error al insertar el registro en la base de datos.';
-   }
+        // Llamar a la función para generar y actualizar el código QR
+        generarActualizarQR($conexion, $lastInsertedID, $_POST["nombre"], $_POST["categoria"], $_POST["responsable"], $_POST["ubicacion"], $_POST["observacion"]);
+    } else {
+        echo 'Error al insertar el registro en la base de datos.';
+    }
 }
 
 
@@ -78,24 +56,6 @@ if ($_POST["operacion"] == "Crear") {
 
 if ($_POST["operacion"] == "Editar") {
     $imagen = obtener_nombre_imagen($_POST["id_activo"]);
-    /* $ficha = obtener_nombre_ficha($_POST["id_activo"]);
-    $certificados = obtener_nombre_certificado($_POST["id_activo"]); */
-
-    /* if ($_FILES["ficha"]["name"] != '') {
-        unlink("fichas/" . $ficha);
-        $ficha = subir_ficha();
-    } 
-    else {
-        $ficha = @$_POST['ficha_o'];    
-    } 
-
-    if ($_FILES["certificado"]["name"] != '') {
-        unlink("certificados/" . $certificados); 
-        $certificado =  subir_certificado();
-    }
-    else {
-        $certificado = @$_POST['certificado_o'];
-    } */
 
 
     if ($_FILES["foto"]["name"] != '') {
@@ -133,6 +93,9 @@ if ($_POST["operacion"] == "Editar") {
     );
 
     if (!empty($resultado)) {
-        echo 'Registro actualizado';
+        // Llamar a la función para generar y actualizar el código QR
+        generarActualizarQR($conexion, $_POST["id_activo"], $_POST["nombre"], $_POST["categoria"], $_POST["responsable"], $_POST["ubicacion"], $_POST["observacion"]);
+    } else {
+        echo 'Error al actualizar el registro en la base de datos.';
     }
 }

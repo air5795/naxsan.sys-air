@@ -88,3 +88,33 @@
         $resultado = $stmt->fetchAll(); 
         return $stmt->rowCount();       
     }
+
+
+    function generarActualizarQR($conexion, $idActivo, $nombre, $categoria, $responsable, $ubicacion, $observacion) {
+        // Crear una cadena de datos para el QR
+        $qrData = "ID: $idActivo\nNombre: $nombre\nCategoria: $categoria\nResponsable: $responsable\nUbicacion: $ubicacion\nObservacion: $observacion";
+    
+        // Directorio donde se almacenarán los códigos QR (asegúrate de tener permisos de escritura)
+        $dir = 'qr/';
+    
+        // Nombre del archivo QR
+        $qrFileName = $dir . 'qr_' . $idActivo . '.png';
+    
+        // Generar el código QR
+        if (QRcode::png($qrData, $qrFileName)) {
+            echo 'Código QR generado y guardado correctamente.<br>';
+        } else {
+            echo 'Error al generar el código QR.<br>';
+        }
+    
+        // Actualizar la base de datos con el nombre del archivo QR
+        $stmt = $conexion->prepare("UPDATE activos_fijos SET qr = :qr WHERE id_activo = :id");
+        $stmt->execute(array(':qr' => $qrFileName, ':id' => $idActivo));
+    
+       
+
+echo 'Registro actualizado y código QR generado. ActualizaciónCompletada';
+
+        
+    }
+    
