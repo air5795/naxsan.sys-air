@@ -21,10 +21,25 @@
 
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 
+        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
+
         <link rel="shortcut icon" href="../img/ICONO.png">
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>NAXSAN</title>
+
+        <style>
+            table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+            table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+                margin-right: .5em;
+                display: inline-block;
+                color: rgb(247 67 67);
+                
+                font-family: "cursiva"; /* Asegúrate de que la fuente Font Awesome esté cargada */
+            }
+        </style>
+
+
         
     </head>
     <body class="sb-nav-fixed">
@@ -67,21 +82,21 @@
             </div>
 
 
-            <div class="col-sm-2">
-                <!-- Example single danger button -->
-                <div class="btn-group">
-                <button type="button" class="btn btn-danger dropdown-toggle w-100" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-printer"></i> Imprimir
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="../pdf_activosFijos.php"><i class="bi bi-printer"></i> Imprimir QR's de Todos Activos Fijos</a></li>
-                    
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#"> <i class="bi bi-printer"></i> Lista total de Inventario Activos Fijos </a></li>
-                </ul>
-                </div>
-                
-            </div>
+            <div class="col-12 col-sm-2">
+    <!-- Example single danger button -->
+    <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle w-100" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-printer"></i> Imprimir
+        </button>
+        <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="../pdf_activosFijos.php"><i class="bi bi-printer"></i> Imprimir QR's </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"> <i class="bi bi-printer"></i> Lista de Inventario  </a></li>
+        </ul>
+    </div>
+</div>
+
+
 
             <div class="col-sm-2 ">
                 
@@ -112,7 +127,7 @@
         <hr style="background-color: red;">
 
         <div class="table-responsive" style="font-size: 11px; width:100%">
-            <table id="datos_usuario" class="table table-hover table-striped" style="width:100%" >
+            <table id="datos_usuario" class="responsive display nowrap table table-hover" style="width:100%" >
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -365,6 +380,9 @@
         
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
+        <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js" type="text/javascript"></script>
+        <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js" type="text/javascript"></script>
+
 
         <script>
 
@@ -421,7 +439,7 @@
             });
             
             var dataTableactivo = $('#datos_usuario').DataTable({
-                "pageLength": 7,
+                "pageLength": 10,
                 "processing":true,
                 "serverSide":true,
                 "order":[],

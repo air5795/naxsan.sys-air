@@ -149,33 +149,33 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
                  
                     <div class="row">
 
-                        <div class="col-12">
+                        <div class="col-sm-12">
                             <label for="nombre" style="font-family: sans-serif;">Ingrese el Nombre del Lugar de el Credencial <span style="color:red"> *</span></label>
                             <input type="text" name="nombre" id="nombre" class="form-control form-control-sm">
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <label for="pagina" style="font-family: sans-serif;">Ingrese la paginaweb <span style="color:red"> *</span></label>
                             <input type="text" name="pagina" id="pagina" class="form-control form-control-sm">
                         </div>
 
 
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <label for="usuario" style="font-family: sans-serif;">Ingrese el Usuario</label>
                             <input type="text" name="usuario" id="usuario" class="form-control form-control-sm">
                         </div>
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <label for="password" style="font-family: sans-serif;">Ingrese la contraseña </label>
                             <input type="text" name="password" id="password" class="form-control form-control-sm">
                         </div>  
                        
 
 
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <label for="foto" style="font-family: sans-serif;">Ingrese Foto del Lugar</label>
                             <input type="file" class="form-control form-control-sm" name="foto" id="foto">
                         </div>
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <span id="imagen-subida"></span>
                         </div>
                        
