@@ -588,14 +588,14 @@
                         
 
                          <div class="col-6">
-                            <span for="inputFirstName">Mavel </span>
+                            <span style="display: none;" for="inputFirstName">Mavel </span>
                             <input class="form-control form-control-sm  bg-opacity-10" id="mavel" name="mavel" type="text" value="" style="display: none;"  />
                         </div>
 
                         
 
                         <div class="col-6">
-                            <span for="inputFirstName">Nicol </span>
+                            <span style="display: none;" for="inputFirstName">Nicol </span>
                             <input class="form-control form-control-sm  bg-opacity-10" id="nicol" name="nicol" type="text" value="" style="display: none;" />
                         </div> 
 
