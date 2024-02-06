@@ -74,8 +74,8 @@
         
        /*  $sub_array[] = $ficha;
         $sub_array[] = $certificado; */
-        $sub_array[] = '<button type="button" name="editar" id="'.$fila["id_credencial"].'" class="btn btn-warning btn-sm  editar" style="background-color: #fbe806;color: #505050; color:#767676;"><i class="fa-solid fa-pencil"></i> </button>';
-        $sub_array[] = '<button type="button" name="borrar" id="'.$fila["id_credencial"].'" class="btn btn-danger btn-sm  borrar" style="background-color: #ff5757;color: #505050; color:white;"><i class="fa-solid fa-trash-can"></i> </button>';
+        $sub_array[] = '<button type="button" name="editar" id="'.$fila["id_credencial"].'" class="btn btn-warning btn-sm  editar" style="background-color: #fbe806;color: #505050; color:#767676;"><i class="fa-solid fa-pencil"></i> Editar </button>';
+        $sub_array[] = '<button type="button" name="borrar" id="'.$fila["id_credencial"].'" class="btn btn-danger btn-sm  borrar" style="background-color: #ff5757;color: #505050; color:white;"><i class="fa-solid fa-trash-can"></i> Eliminar </button>';
         $datos[] = $sub_array;
     }
 

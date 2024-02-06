@@ -17,11 +17,14 @@
         <link rel="stylesheet" href="css/estilos2.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
         
+        
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+        
 
         
 
@@ -29,9 +32,26 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>NAXSAN</title>
+
+        <style>
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    margin-right: .5em;
+    display: inline-block;
+    color: rgb(247 67 67);
+    
+    font-family: "cursiva"; /* Asegúrate de que la fuente Font Awesome esté cargada */
+}
+</style>
+
+
+
         
     </head>
     <body class="sb-nav-fixed">
+
+
+
     <?php include "../menu.php"?>
     
 
@@ -85,19 +105,19 @@
         <hr style="background-color: red;">
 
         <div class="table-responsive" style="font-size: 11px; width:100%">
-            <table id="datos_usuario" class="responsive display nowrap table table-hover table-striped" style="width:100%;" >
+            <table id="datos_usuario" class="responsive display nowrap table table-hover " style="width:100%;font-size:13px;" >
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>NOMBRE</th>
+                        <th width = "10px">ID</th>
+                        <th width = "15px">NOMBRE</th>
                         
                         <th>USUARIO</th>
                         <th>CONSTRASEÑA</th>
                         <th>IMG</th>
                         
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th width = "10px"></th>
+                        <th width = "10px"></th>
+                        <th width = "10px"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -306,6 +326,17 @@
             
             var dataTableactivo = $('#datos_usuario').DataTable({
                 "responsive": true,
+                "dom": 'Bfrtip',
+                "buttons": [
+                    {
+                        extend: 'colvis',
+                        className: 'btn-default',
+                        text: '<i class="fas fa-plus-circle"></i> Mostrar columnas', // Utilizamos FontAwesome para el icono
+                        columnText: function ( dt, idx, title ) {
+                            return (idx+1)+': '+title;
+                        }
+                    }
+                ],
                 "pageLength": 7,
                 "processing":true,
                 "serverSide":true,
