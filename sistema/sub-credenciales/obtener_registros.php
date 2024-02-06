@@ -33,7 +33,7 @@
         $imagen = '';
         if($fila["foto"] != '' ){
             $imagen = '<img  class="gallery-item" src="productos/'.$fila['foto'].'" height="50px"    id="productos/'.$fila['foto'].'">';
-            //$image = '<a class="btn btn-outline-primary btn-sm gallery-item boton-w"  id="actas/'.$fila['image'].'"><i class="fa-solid fa-image"></i> </a>';
+            //$image = '<a class="btn btn-outline-primary btn-sm gallery-item "  id="actas/'.$fila['image'].'"><i class="fa-solid fa-image"></i> </a>';
         }else{
             $imagen = '<a class="btn btn-outline-secondary btn-sm gallery-item  disabled" id=""><i class="fa-solid fa-ban"></i> </a>';
         }
@@ -42,23 +42,23 @@
 
         /* $qr = '';
         if($fila["qr"] != ''){
-            $qr = '<a class="btn btn-outline-primary btn-sm gallery-item boton-w"  id="qr/'.$fila['foto'].'"><i class="fa-solid fa-image"></i> </a>';
+            $qr = '<a class="btn btn-outline-primary btn-sm gallery-item "  id="qr/'.$fila['foto'].'"><i class="fa-solid fa-image"></i> </a>';
         }else{
-            $qr = '<a class="btn btn-outline-secondary btn-sm gallery-item boton-w disabled" id=""><i class="fa-solid fa-ban"></i> </a>';
+            $qr = '<a class="btn btn-outline-secondary btn-sm gallery-item  disabled" id=""><i class="fa-solid fa-ban"></i> </a>';
         } */
 
          $pagina = '';
         if($fila["pagina"] != ''){
-            $pagina = '<a  target="_blank" class="btn btn-secondary btn-sm boton-w boton-f " href="'.$fila['pagina'].' "><i class="bi bi-back"></i> Ir a Pagina Web</a>';
+            $pagina = '<a  target="_blank" class="btn btn-secondary btn-sm  boton-f " href="'.$fila['pagina'].' "><i class="bi bi-back"></i> Ir a Pagina Web</a>';
         }else{
-            $pagina = '<a class="btn btn-outline-secondary btn-sm boton-w disabled" href="" ><i class="fa-solid fa-ban"></i></a>';
+            $pagina = '<a class="btn btn-outline-secondary btn-sm  disabled" href="" ><i class="fa-solid fa-ban"></i></a>';
         } 
 /*
         $certificado = '';
         if($fila["certificado"] != ''){
-            $certificado = '<a  target="_blank" class="btn btn-outline-danger btn-sm boton-w boton-c" href="certificados/'.$fila['certificado'].' "><i class="bi bi-file-earmark-post"></i></a>';
+            $certificado = '<a  target="_blank" class="btn btn-outline-danger btn-sm  boton-c" href="certificados/'.$fila['certificado'].' "><i class="bi bi-file-earmark-post"></i></a>';
         }else{
-            $certificado = '<a  class="btn btn-outline-secondary btn-sm boton-w disabled" href=""><i class="fa-solid fa-ban"></i></a>';
+            $certificado = '<a  class="btn btn-outline-secondary btn-sm  disabled" href=""><i class="fa-solid fa-ban"></i></a>';
         } */
 
 
@@ -74,8 +74,8 @@
         
        /*  $sub_array[] = $ficha;
         $sub_array[] = $certificado; */
-        $sub_array[] = '<button type="button" name="editar" id="'.$fila["id_credencial"].'" class="btn btn-warning btn-sm boton-w  editar" style="background-color: #fbe806;color: #505050; color:#767676;"><i class="fa-solid fa-pencil"></i> </button>';
-        $sub_array[] = '<button type="button" name="borrar" id="'.$fila["id_credencial"].'" class="btn btn-danger btn-sm boton-w borrar" style="background-color: #ff5757;color: #505050; color:white;"><i class="fa-solid fa-trash-can"></i> </button>';
+        $sub_array[] = '<button type="button" name="editar" id="'.$fila["id_credencial"].'" class="btn btn-warning btn-sm  editar" style="background-color: #fbe806;color: #505050; color:#767676;"><i class="fa-solid fa-pencil"></i> </button>';
+        $sub_array[] = '<button type="button" name="borrar" id="'.$fila["id_credencial"].'" class="btn btn-danger btn-sm  borrar" style="background-color: #ff5757;color: #505050; color:white;"><i class="fa-solid fa-trash-can"></i> </button>';
         $datos[] = $sub_array;
     }
 
