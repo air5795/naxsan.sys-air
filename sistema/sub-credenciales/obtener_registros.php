@@ -49,7 +49,7 @@
 
          $pagina = '';
         if($fila["pagina"] != ''){
-            $pagina = '<a  target="_blank" class="btn btn-info btn-sm boton-w boton-f " href="'.$fila['pagina'].' "><i class="bi bi-back"></i> Pagina Web</a>';
+            $pagina = '<a  target="_blank" class="btn btn-secondary btn-sm boton-w boton-f " href="'.$fila['pagina'].' "><i class="bi bi-back"></i> Ir a Pagina Web</a>';
         }else{
             $pagina = '<a class="btn btn-outline-secondary btn-sm boton-w disabled" href="" ><i class="fa-solid fa-ban"></i></a>';
         } 

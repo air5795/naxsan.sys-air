@@ -536,6 +536,17 @@
                                 <option value="12° LUGAR">12° LUGAR</option>
                                 <option value="13° LUGAR">13° LUGAR</option>
                                 <option value="14° LUGAR">14° LUGAR</option>
+                                <option value="15° LUGAR">15° LUGAR</option>
+                                <option value="16° LUGAR">16° LUGAR</option>
+                                <option value="17° LUGAR">17° LUGAR</option>
+                                <option value="18° LUGAR">18° LUGAR</option>
+                                <option value="19° LUGAR">19° LUGAR</option>
+                                <option value="20° LUGAR">20° LUGAR</option>
+                                <option value="21° LUGAR">21° LUGAR</option>
+                                <option value="22° LUGAR">22° LUGAR</option>
+                                <option value="23° LUGAR">23° LUGAR</option>
+                                <option value="24° LUGAR">24° LUGAR</option>
+                                <option value="25° LUGAR">25° LUGAR</option>
                                
                             </select>
                         </div>

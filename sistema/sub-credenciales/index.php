@@ -96,6 +96,9 @@
                         <th></th>
                     </tr>
                 </thead>
+                <tbody>
+                               
+                            </tbody>
             </table>
         </div>
     </div>
@@ -246,6 +249,9 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
 
+
+
+
         <script>
 
             window.addEventListener('DOMContentLoaded', event => {
@@ -290,6 +296,7 @@
             });
             
             var dataTableactivo = $('#datos_usuario').DataTable({
+                "responsive": true,
                 "pageLength": 7,
                 "processing":true,
                 "serverSide":true,
@@ -298,15 +305,14 @@
                     url: "obtener_registros.php",
                     type: "POST"
                 },
-                "columnsDefs":[
+                "columnsdef":[
                     {
-                    "responsivePriority": 1, targets: 0 ,
-		            "responsivePriority": 2, targets: 4 ,
                     "targets":[0, 3, 4],
                     "orderable":false,
                     },
                     
                 ],
+                
                 "language": {
                 "decimal": "",
                 "emptyTable": "No hay registros",
