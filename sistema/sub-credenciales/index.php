@@ -34,15 +34,15 @@
         <title>NAXSAN</title>
 
         <style>
-table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
-table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
-    margin-right: .5em;
-    display: inline-block;
-    color: rgb(247 67 67);
-    
-    font-family: "cursiva"; /* Asegúrate de que la fuente Font Awesome esté cargada */
-}
-</style>
+            table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+            table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+                margin-right: .5em;
+                display: inline-block;
+                color: rgb(247 67 67);
+                
+                font-family: "cursiva"; /* Asegúrate de que la fuente Font Awesome esté cargada */
+            }
+        </style>
 
 
 
