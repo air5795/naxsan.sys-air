@@ -21,23 +21,14 @@
 
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
+        
 
         <link rel="shortcut icon" href="../img/ICONO.png">
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>NAXSAN</title>
 
-        <style>
-            table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
-            table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
-                margin-right: .5em;
-                display: inline-block;
-                color: rgb(247 67 67);
-                
-                font-family: "cursiva"; /* Asegúrate de que la fuente Font Awesome esté cargada */
-            }
-        </style>
+        
 
 
         
@@ -127,7 +118,7 @@
         <hr style="background-color: red;">
 
         <div class="table-responsive" style="font-size: 11px; width:100%">
-            <table id="datos_usuario" class="responsive display nowrap table table-hover" style="width:100%" >
+            <table id="datos_usuario" class="table table-hover" style="width:100%" >
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -380,8 +371,7 @@
         
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
-        <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js" type="text/javascript"></script>
-        <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js" type="text/javascript"></script>
+    
 
 
         <script>
